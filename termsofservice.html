@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="pwa/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="pwa/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="pwa/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- cdn for AOS library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
+<meta name="description" content="Web site created using create-react-app" />
+<link async href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+<!-- custom style.css -->
+<link rel="stylesheet" href="./style.css" />
+
+<title>Varoh Games | Terms of Service</title>
+<style>
+  ul {
+    list-style: disc;
+  }
+</style>
+</head>
+
+<body>
+
+
+  <!-- header -->
+  <header id="header">
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color:#b8edf9">
+
+      <a href="./index.html">
+        <img src="./images/varoh-games-logo.png" alt="Varoh Games Logo" height="85px" width="90px" />
+      </a>
+      <div class="cart-btn-1" id="cartic" onclick="cartic()">
+        <ul class="navbar-right" style="list-style: none;">
+          <li><a href="#" id="cart1"><i class="fa fa-shopping-cart fa-2x"></i><span class="badge"
+                id="badge1">3</span></a></li>
+        </ul>
+      </div>
+      <div class="cart-btn-2" id="cartic" onclick="cartic()">
+        <ul class="navbar-right" style="list-style: none;">
+          <li><a href="#" id="cart2"><i class="fa fa-shopping-cart fa-2x "></i><span class="badge"
+                id="badge2">3</span></a></li>
+        </ul>
+      </div>
+
+
+      </div>
+      <div class="menu-btn" data-target="#navigation" data-toggle="collapse">
+        <div class="menu-btn__burger navbar-toggler-icon" data-target="#navigation" data-toggle="collapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+
+        </div>
+      </div>
+
+      </div>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="./index.html" class="li l nav-link" style="background-color: #8a2be2">
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#about" class="li l nav-link" style="background-color: #ffa500">
+              <span>About Us</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./products.html" class="li l nav-link" style="background-color: #b22222">
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#testimonials" class="li l nav-link" style="background-color: #6b8e23">
+              <span>Testimonials</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#contact" class="li l nav-link" style="background-color: #008080">
+              <span>Contact Us</span>
+            </a>
+          </li>
+          <li class="nav-item" id="loginbtn1">
+            <a href="#" class="li l nav-link dropdown-toggle" style="background-color: #31b318"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span> My Account</span>
+            </a>
+            <ul class="dropdown-menu mt-5 h-50 w-100 shadow-lg p-3 mb-5 bg-white rounded">
+              <li  id="myorders">
+                <a class="dropdown-item" onclick="myorders()" style="cursor: pointer">My Orders</a>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li id="auth_header_btn1" style="cursor: pointer"></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto l">
+          <li class="nav-item dropdown">
+            <!--  my account button -->
+            <div class="btn-group  dropleft">
+              <button type="button" id="loginbtn2" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                My Account
+              </button>
+              <ul class="dropdown-menu">
+                <li  id="myorders"><a class="dropdown-item" onclick="myorders()" style="cursor:pointer">My Orders</a></li>
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li id="auth_header_btn2" style="cursor:pointer"></li>
+              </ul>
+            </div>
+            <!-- END my account button -->
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- End header -->
+
+  <!-- modal for login/register -->
+  <div id="auth_modal">
+
+  </div>
+  <!--End modal for login/register -->
+
+  <div class="container">
+    <h3 class="my-5 text-center">Terms of Service
+    </h3>
+    <p>Varoh Games aims to provide an exemplary service, where we take the time and effort to provide you with beautiful games and books. We will, in all aspects, endeavour to solve problems (which may occasionally occur) as quickly and efficiently as possible, with the minimum of inconvenience to you.
+    </p>
+    <p>For the avoidance of doubt, we have outlined our Terms and Conditions below.
+    </p>
+    <p>The continued use of this website and any order placed will be subject to these terms of business, together with
+      our privacy policy. Please: 
+    </p>
+    <ul style="list-style: lower-alpha;">
+      <li>read these standard terms of business before placing an order; 
+      </li>
+      <li>retain a copy for your records; and 
+      </li>
+      <li>read our <a  style="text-decoration: underline; color:#007bff;" href="./privacypolicy.html">privacy policy</a>.
+      </li>
+    </ul>
+    <h4>Interpretation</h4>
+    <p>The definitions in this clause apply in the terms and conditions set out in this document: </p>
+    <ul>
+      <li>force majeure event: shall have the meaning given in paragraph 9. 
+      </li>
+      <li>goods: the products that we are selling to you as set out on your order. </li>
+      <li>order: your order for the goods, order confirmation: shall have the meaning set out in paragraph 2.5</li>
+      <li>terms: the terms and conditions set out in this document. 
+        writing: or written includes faxes and e-mail.
+      </li>
+      <p>Headings do not affect the interpretation of these terms.
+      </p>
+    </ul>
+    <h4>Basis of Sale</h4>
+    <ul>
+      <li>These terms and the order are considered by us to set out the whole agreement between you and us for the sale
+        of the goods. Please check that the details in the terms or on the order are complete and accurate before you
+        commit yourself to the contract. If you think that there is a mistake, please make sure that you ask us to
+        confirm any changes in writing, as we only accept responsibility for statements and representations made in
+        writing by our authorised employees and agents. Please ensure that you read and understand these terms before
+        you submit the order, because you will be bound by the terms once a contract comes into existence between us, in
+        accordance with paragraph 2.5.
+      </li>
+      <li>Any samples, drawings, descriptions or advertising we issue, and any colours, descriptions, images or
+        illustrations contained in on our website or in our mini-brochures (whether online or in hard copy form), are
+        published solely to provide you with an approximate idea of the goods they describe. They do not form part of
+        the contract between you and us or any other contract between you and us for the sale of the goods.
+      </li>
+      <li>If any of these terms are inconsistent with any term of or instruction in the order, the terms in the order
+        shall prevail.
+      </li>
+      <li>The order is an offer by you to enter into a binding contract, which we are free to accept or decline at our
+        absolute discretion.
+      </li>
+      <li>These terms shall become binding on you and us when we issue you with written acceptance of an order (order
+        confirmation) at which point a contract shall come into existence between us.
+      </li>
+      <li>We have the right to revise and amend these terms from time to time to reflect changes in market conditions
+        affecting our business, changes in technology, changes in payment methods, changes in relevant laws and
+        regulatory requirements and changes in our system's capabilities. You will be subject to the policies and terms
+        in force at the time that you order the goods from us, unless any change to those policies or these terms is
+        required by law or government or regulatory authority (in which case, it will apply to orders you have
+        previously placed that we have not yet fulfilled).
+      </li>
+    </ul>
+    <h4>The Goods</h4>
+    <ul>
+      <li>We shall not be liable for any defect in the goods arising from fair wear and tear, wilful damage, accident,
+        negligence by you or any third party, if you use the goods in a way that we do not recommend, you fail to follow
+        our instructions, or any alteration or repair you carry out without our prior written approval.
+      </li>
+      <li>We will take reasonable steps to pack the goods properly and to ensure that you receive your order in good
+        condition.
+      </li>
+      <li>These terms apply to any repaired or replacement goods we supply to you in the unlikely event that the
+        original goods are faulty or do not otherwise conform with these terms.
+      </li>
+    </ul>
+    <h4>Delivery</h4>
+    <ul>
+      <li>Unless otherwise stated, we will aim to procure delivery to you within 3 - 7 calendar days of the date set out
+        in the order or on which we notify you that they are ready.
+      </li>
+      <li>Delivery of the order shall be completed when the goods are delivered to you.
+      </li>
+      <li>Please note that the goods may be delivered direct from our suppliers. Occasionally the delivery date may be
+        affected by factors beyond our or our suppliers control and so cannot be guaranteed. We will aim to let you know
+        if we become aware of an unexpected delay and will arrange a new delivery date with you.
+      </li>
+      <li>If we are not able to deliver the whole of the order at one time due to operational reasons or shortage of
+        stock, we will deliver the order in instalments. We will not charge you extra delivery costs for this. If you
+        ask us to deliver the order in instalments, we may charge you extra delivery costs. Each instalment shall
+        constitute a separate contract. If we are late delivering an instalment or one instalment is faulty, that will
+        not entitle you to cancel any other instalment.
+      </li>
+    </ul>
+    <h4>Defective Goods and Returns</h4>
+    <ul>
+      <li>In the unlikely event that the goods do not conform with these terms and the order, please let us know as soon
+        as possible after delivery. Subject as set out below, we may ask you to return the goods to us at our cost and
+        once we have checked that the goods are faulty, we may: 
+        <ul style="list-style: lower-alpha;">
+          <li>provide you with a full or partial refund; or 
+          </li>
+          <li>replace the goods; or 
+          </li>
+          <li>repair the goods.
+          </li>
+        </ul>
+      </li>
+      <li>These terms will apply to any repaired or replacement goods we supply to you.
+      </li>
+      <li>We hope that you will be pleased with your purchase, however you may return your order within seven working
+        days of delivery in accordance with your cancellation rights. For the avoidance of doubt we will not refund your
+        delivery costs when a product is simply unwanted.
+      </li>
+      <li>For the avoidance of doubt, we do not deliver goods outside India.
+      </li>
+    </ul>
+    <h4>Title and Risk</h4>
+    <ul>
+      <li>The goods will be your responsibility from the time of delivery.
+      </li>
+      <li>Ownership of the goods will only pass to you when we receive payment in full of all sums due for the goods,
+        including delivery charges.
+      </li>
+    </ul>
+    <h4>Price and Payment</h4>
+    <ul>
+      <li>The price of the goods will be as set out in the quotation we provided to you or, if we have not provided a
+        quotation or the quotation has expired, in our price list in force at the time we confirm your order. Prices are
+        liable to change at any time, but price changes will not affect orders that we have confirmed in writing.
+      </li>
+      <li>These prices include GST. However, if the rate of GST changes between the date of the order and the date of
+        delivery, we will adjust the GST you pay, unless you have already paid for the goods in full before the change
+        in the rate of GST takes effect.
+      </li>
+      <li>These prices exclude delivery costs, which may be added to the total amount due.
+      </li>
+      <li>It is always possible that, despite our best efforts, some of the goods we sell may be incorrectly priced. We
+        will normally check prices as part of our dispatch procedures so that, where the goods' correct price is less
+        than our stated price, we will charge the lower amount when dispatching the goods to you. If the goods' correct
+        price is higher than the price stated on our website, we will normally, at our discretion, either contact you
+        for instructions before dispatching the goods, or reject the order and tell you. For the avoidance of doubt,
+        particularly if the pricing error is obvious and unmistakeable and could have reasonably been recognised by you
+        as a mis-pricing, we do not have to provide the goods to you at the incorrect (lower) price.
+      </li>
+      <li>Payment for all goods must be made in at time of order by credit or debit card, net banking, UPI payments and
+        wallets at the time of ordering.
+      </li>
+    </ul>
+    <h4>Limitation of Liability</h4>
+    <ul>
+      <li>If either of us fails to comply with these terms, neither of us shall be responsible for any losses that the
+        other suffers as a result, except for those losses which are a foreseeable consequence of the failure to comply
+        with these terms.
+      </li>
+      <li>We will not be liable or responsible for any defamatory, misleading, offensive or otherwise inappropriate
+        content of any goods supplied by us. You are deemed to have satisfied yourself as to the nature and type of
+        goods to be purchased before placing an order with us. No liability is accepted by us for any offence, or loss
+        you may suffer as a result of the content of the goods.
+      </li>
+      <li>Our liability to you under this agreement will not exceed the total value of the order.
+      </li>
+    </ul>
+    <h4>Events Outside Our Control</h4>
+    <ul>
+      <li>We will not be liable or responsible for any failure to perform, or delay in performance of, any of our
+        obligations under these terms that is caused by events outside our reasonable control (force majeure event).
+      </li>
+      <li>A force majeure event includes any act, event, non-occurrence, omission or accident beyond our reasonable
+        control and includes, in particular (without limitation), the following: 
+        <ul style="list-style: lower-alpha;">
+          <li>strikes, lock-outs or other industrial action; or 
+          </li>
+          <li>civil commotion, riot, invasion, terrorist attack or threat of terrorist attack, war (whether declared or
+            not) or threat or preparation for war; or 
+          </li>
+          <li>fire, explosion, storm, flood, earthquake, subsidence, epidemic or other natural disaster; or 
+          </li>
+          <li>impossibility of the use of railways, shipping, aircraft, motor transport or other means of public or
+            private transport; 
+          </li>
+          <li> impossibility of the use of public or private telecommunications networks; or 
+          </li>
+          <li> failure by our suppliers to supply the goods to us which are required to fulfil your order.
+          </li>
+        </ul>
+      </li>
+      <li>Our obligations under these terms are suspended for the period that the force majeure event continues, and we
+        will have an extension of time to perform these obligations for the duration of that period. We will take
+        reasonable steps to bring the force majeure event to a close or to find a solution by which our obligations
+        under these terms can be performed despite the force majeure event. If we have been unable to resolve a force
+        majeure event within three months we shall be entitled to cancel your order without penalty save for refunding
+        to you the purchase price you have paid.
+      </li>
+    </ul>
+    <h4>Assignment</h4>
+    <p>You may not transfer any of your rights or obligations under these terms to another person without our prior
+      written consent, which we will not withhold unreasonably. We can transfer all or any of our rights and obligations
+      under these terms to another organisation, but this will not affect your rights under these terms.
+    </p>
+    <h4>Notices</h4>
+    <p>All notices sent by you to us must be sent to Varoh Games, A-403, Twins CHS Limited, Plot Number 57, Sector 20,
+      Kharghar, Navi Mumbai 410210. We may give notice to you at either the e-mail or postal address you provide to us
+      in the order. Notice will be deemed received and properly served on you 24 hours after an e-mail is sent or three
+      days after the date of posting of any letter. In proving the service of any notice, it will be sufficient to
+      prove, in the case of a letter, that the letter was properly addressed, stamped and placed in the post and, in the
+      case of an e-mail that the e-mail was sent to the specified e-mail address of the addressee.</p>
+    <h4>General</h4>
+    <ul>
+      <li>If any court or competent authority decides that any of the provisions of these terms and/or the order are
+        invalid, unlawful or unenforceable to any extent, that term will, to that extent only, be severed from the
+        remaining terms, which will continue to be valid to the fullest extent permitted by law.
+      </li>
+      <li>If we fail, at any time while these terms are in force, to insist that you perform any of your obligations
+        under these terms, or if we do not exercise any of our rights or remedies under these terms, that will not mean
+        that we have waived such rights or remedies and will not mean that you do not have to comply with those
+        obligations. If we do waive a default by you that will not mean that we will automatically waive any subsequent
+        default by you. No waiver by us of any of these terms shall be effective unless we expressly say that it is a
+        waiver and we tell you so in writing.
+      </li>
+      <li>We do not sell products for purchase by children. If you are under 18, you may only use our website and submit
+        an order under the supervision of a parent or guardian.
+      </li>
+      <li>These terms shall be governed by law of India and we both agree to the jurisdiction of Mumbai courts.
+      </li>
+    </ul>
+
+  </div>
+
+
+  <!-- footer-links -->
+  <div class="footer-links" style="background-color:#192e64;color:whitesmoke">
+    <div class="row my-0">
+      <div class="col-lg-3 col-md-6 footer-contact">
+        <h4 class="my-4">Varoh Games</h4>
+        <p><i class="fa fa-map-marker mx-2 "></i>A-403, Twins CHS Limited,
+          <br>
+          Navi Mumbai 410210,
+          <br>Maharashtra
+        </p>
+        <p><i class="fa fa-phone  mx-2 "></i><a href="tel:+919748363769">+91 9748363769</a>
+        </p>
+        <p><i class="fa fa-envelope  mx-2"></i> <a href="mailto:contact@varohgames.com">contact@varohgames.com</a></p>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6 usefulLinks">
+        <h4 class="my-4">Useful Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#about">About us</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./termsofservice.html" target="_blank" rel="noreferrer noopener">Terms of service</a></li>
+          <li><a href="./privacypolicy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h4 class="my-4">Products</h4>
+        <ul style="list-style: none !important;">
+          <li><a href="./products.html#games">Games</a></li>
+          <li><a href="./products.html#activityBox">Knowledge Box</a></li>
+          <li><a href="./products.html#specialBooks">Varoh's Books</a></li>
+          <li>
+            <a href="./products.html#knowledgeCapsules">Knowledge Capsules</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h4 class="my-4">Our Social Networks</h4>
+        <div class="py-2  text-center">
+          <a href="https://www.facebook.com/VarohGames/"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
+          <a href="https://www.youtube.com/channel/UCfy0-7GgVMRZ-ogiixeSgmg/featured "><i
+              class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
+          <a href="https://www.instagram.com/varohgames?r=nametag"><i
+              class="fab fa-instagram fa-2x text-danger mx-3"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer" style="font-size: 15px;">
+    <p><a href="./index.html"><strong>Varoh Games</strong></a> &copy; <span id="year"></span> | All
+      Rights Reserved</p>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Back To  Top Button -->
+  <div class="container">
+    <a href="#" onclick="topFunction()" id="topBtn" class="back-to-top" title="Go to top"><svg width="2em" height="2em"
+        viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+      </svg></a>
+  </div>
+  <!-- preloader -->
+  <div id="preloader"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="./scripts/auth_header.js"></script>
+  <script src="./scripts/contact_us.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <!--script for footer dynamically changing year -->
+
+
+  <script>var year = new Date().getFullYear();
+    document.getElementById("year").innerHTML = year;</script>
+  <!-- cdn for AOS library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- preloader script -->
+  <script>
+    // Preloader
+    $(window).on('load', function () {
+      if ($('#preloader').length) {
+        $('#preloader').delay(100).fadeOut('slow', function () {
+          $(this).remove();
+        });
+      }
+    });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+  <!--End preloader script -->
+
+  <script>
+    var mybutton = document.getElementById("topBtn");
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      } else {
+        document.getElementById("header").style.top = "-119px";
+        mybutton.style.display = "none";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+
+  <!-- form validation -->
+  <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+  </script>
+
+
+
+  <!-- End form validation -->
+
+  <!-- script for toggables tabs color change -->
+  <script>
+    $(document).ready(function () {
+
+      $('ul.nav-tabs > li')
+        .click(function (e) {
+          $('ul.nav-tabs > li')
+            .removeClass('active');
+          $(this).addClass('active');
+        });
+    });
+
+  </script>
+  <!--End script for toggables tabs color change -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator/dist/jbvalidator.min.js"></script> -->
+
+  <script src="dist/jbvalidator.min.js"></script>
+  <script>
+    $(function () {
+
+      let validator = $('form.needs-validation').jbvalidator({
+        errorMessage: true,
+        successClass: true,
+        language: "dist/lang/en.json"
+      });
+
+      //custom validate methode
+      validator.validator.custom = function (el, event) {
+        if ($(el).is('[name=password]') && $(el).val().length < 5) {
+          return 'Your password is too weak.';
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

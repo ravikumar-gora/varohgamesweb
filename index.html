@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Varoh Games | Order Games ,books and many more | Order Online</title>
+  <meta name="description" content="We, at Varoh Games, are truly committed to deliver a unique and fun experience to kids, stimulating their
+  imaginations and creativity.  We endeavour to help children improve their cognitive, analytical and logical reasoning skills so that
+  they are future ready and know how to utilize these skills in different facets of life.">
+
+  <meta name="keywords" content="">
+  <link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="pwa/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="pwa/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="pwa/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  <!-- cdn for testimonial theme  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- cdn for AOS library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <!-- custom style.css -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+</head>
+
+<body>
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v9.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Your Chat Plugin code -->
+  <div class="fb-customerchat" attribution=setup_tool page_id="125807812328142" theme_color="#0A7CFF"
+    logged_in_greeting="Hi! How can we help you?" logged_out_greeting="Hi! How can we help you?"
+    greeting_dialog_display="fade">
+  </div>
+  <!-- header -->
+  <header id="header" style="z-index:21474836 !important;">
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color:#b8edf9">
+
+      <a href="./index.html">
+        <img src="./images/varoh-games-logo.png" alt="Varoh Games Logo" height="85px" width="90px" />
+      </a>
+      <div class="cart-btn-1" id="cartic" onclick="cartic()">
+        <ul class="navbar-right">
+          <li style="padding-bottom:0% !important"><a href="#" id="cart1"><i class="fa fa-shopping-cart fa-2x"></i><span
+                class="badge" id="badge1">3</span></a></li>
+        </ul>
+      </div>
+      <div class="cart-btn-2" id="cartic" onclick="cartic()">
+        <ul class="navbar-right">
+          <li><a href="#" id="cart2"><i class="fa fa-shopping-cart fa-2x "></i><span class="badge"
+                id="badge2">3</span></a></li>
+        </ul>
+      </div>
+
+
+
+      <div class="menu-btn" data-target="#navigation" data-toggle="collapse">
+        <div class="menu-btn__burger navbar-toggler-icon" data-target="#navigation" data-toggle="collapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+
+        </div>
+      </div>
+
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="li l nav-link" style="background-color: #8a2be2">
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="li l nav-link" style="background-color: #ffa500">
+              <span>About Us</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./products.html" class="li l nav-link" style="background-color: #b22222">
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#testimonials" class="li l nav-link" style="background-color: #6b8e23">
+              <span>Testimonials</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="li l nav-link" style="background-color: #008080">
+              <span>Contact Us</span>
+            </a>
+          </li>
+          <li class="nav-item " id="loginbtn1">
+            <a href="#" class="li l nav-link dropdown-toggle" style="background-color: #31b318"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span>My Account</span>
+
+            </a>
+            <ul class="dropdown-menu mt-5 h-50 w-100 shadow-lg p-3 mb-5 bg-white rounded ">
+              <li id="myorders"><a class="dropdown-item " onclick="myorders()" style="cursor:pointer">My Orders</a></li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li id="auth_header_btn1" style="cursor:pointer"></li>
+            </ul>
+
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto l">
+          <li class="nav-item dropdown">
+            <!--  my account button -->
+            <div class="btn-group  dropleft">
+              <button type="button" id="loginbtn2" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                My Account
+              </button>
+              <ul class="dropdown-menu">
+                <li id="myorders"><a class="dropdown-item" onclick="myorders()" style="cursor:pointer">My Orders</a>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li id="auth_header_btn2" style="cursor:pointer;"></li>
+              </ul>
+            </div>
+            <!-- END my account button -->
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- End header -->
+
+  <!-- modal for login/register -->
+  <div id="auth_modal">
+
+  </div>
+
+
+
+  <!--End modal for login/register -->
+
+
+
+  <!-- carousel -->
+  <div id="myCarousel" class="carousel slide " data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+
+      <div class="carousel-item active carousel-slide " data-interval="2000">
+        <div class="overlay-image" style="background-image: url(./images/bg2.jpg)"></div>
+
+        <div class="slide-2-text animate__animated animate__backInDown">
+          <div>
+            <h1>Varoh Games</h1>
+            <p>Play more,Live more</p>
+          </div>
+          <p>
+            <a class="btn  btn-primary " type="button" href="./products.html" role="button"
+              style="border-radius: 10px;">Shop Now
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+
+      <div class="carousel-item carousel-slide" data-interval="2000">
+        <div class="overlay-image carousel-img-2" style="background-image: url(./images/bg1.jpg)"></div>
+        <div class="slide-1-text animate__animated animate__backInDown">
+          <div>
+            <h1>Varoh Games</h1>
+            <p>Adding fun to your Life.</p>
+          </div>
+          <p>
+            <a class="btn  btn-primary " type="button" href="./products.html" role="button"
+              style="border-radius: 10px;">
+              Explore
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item carousel-slide" data-interval="2000">
+        <div class="overlay-image" style="background-image: url(./images/bg3.jpg)"></div>
+        <div class="slide-3-text animate__animated animate__backInDown ">
+          <div>
+            <h1>Varoh Games</h1>
+            <p>Learning in a unique and fun way</p>
+          </div>
+          <p>
+            <a class="btn  btn-primary " type="button" href="./products.html" role="button"
+              style="border-radius: 10px;">Know More</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true" style="    background-color: #038080;
+      /* font-size: 20px; */
+      /* color: black; */
+      height: 100px;
+      width: 45px; margin-right: 150px;"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true" style="    background-color: #038080;
+      /* font-size: 20px; */
+      /* color: black; */
+      height: 100px;
+      width: 45px; margin-left: 150px;"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- end carousel  -->
+
+  <!-- whatsapp -->
+  <div class="container">
+    <a class="whats-app" rel="noreferrer noopener" href="https://wa.me/919748363769?text=I want to know more about the products of Varoh Games."
+      target="_blank">
+      <i class="fab fa-whatsapp my-float"></i>
+    </a>
+  </div>
+  <!-- end whatsapp -->
+
+
+  <!-- about section -->
+  <div class="container mw-100 my-5 relative" id="about">
+    <h1 class="mt-4 mb-3 mt-3 aboutHeading">About Us</h1>
+    <div class="row d-flex align-items-center  justify-content-center" data-aos="fade-up">
+      <div class="col-lg-6 ">
+        <img class="img-fluid rounded " src="./images/About.jpeg" alt="about us"  />
+      </div>
+      <div class="col-lg-6  d-flex align-items-center  ">
+
+        <div>
+          <p>We, at Varoh Games, are truly committed to deliver a unique and fun experience to kids, stimulating their
+            imaginations and creativity.</p>
+          <p>
+            We endeavour to help children improve their cognitive, analytical and logical reasoning skills so that
+            they are future ready and know how to utilize these skills in different facets of life.
+          </p>
+          <p>Creating a playway environment for kids, we design various products that will surely excite the young
+            minds.</p>
+          <p>We believe in edutainment for kids, so that they can love what they do, while doing what they love.</p>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!--end about section -->
+
+  <!-- why choose us section -->
+  <div class="shipping-outer section mb-5">
+    <div class="shipping-inner row ">
+      <div class="heading col-lg-12 col-12 text-center">
+        <h2 style="margin-bottom: 40px;">Why choose us?</h2>
+      </div>
+      <div class="subtitle-part subtitle-part1 col-lg-3 col-6 text-center text-lg-left align-middle">
+        <div class="subtitle-part-inner">
+          <div class="subtitile">
+            <div class="subtitle-part-image d-flex justify-content-center align-items-center"><i
+                class='fas fa-mobile-alt' style='font-size:25px;color:white'></i></div>
+            <div class="subtitile1">Reduced Screen Time</div>
+
+            <!-- <div class="subtitile2">Offers upto 50%</div> -->
+          </div>
+        </div>
+      </div>
+      <div class="subtitle-part subtitle-part2 col-lg-3 col-6 text-center text-lg-left">
+        <div class="subtitle-part-inner">
+          <div class="subtitile">
+            <div class="subtitle-part-image d-flex justify-content-center align-items-center"> <i
+                class="fas fa-book-open" style="font-size:25px;color:white"></i></div>
+            <div class="subtitile1">Learning through Playway</div>
+            <!-- <div class="subtitile2">Order Now</div> -->
+          </div>
+        </div>
+      </div>
+      <div class="subtitle-part subtitle-part3 col-lg-3 col-6 text-center text-lg-left">
+        <div class="subtitle-part-inner">
+          <div class="subtitile ">
+            <div class="subtitle-part-image d-flex justify-content-center align-items-center"> <i class='fa fa-child'
+                style='font-size:25px;color:white'></i></div>
+            <div class="subtitile1">Enhanced Fun Quotient</div>
+            <!-- <div class="subtitile2">You can trust us</div> -->
+          </div>
+        </div>
+      </div>
+      <div class="subtitle-part subtitle-part3 col-lg-3 col-6 text-center text-lg-left">
+        <div class="subtitle-part-inner">
+          <div class="subtitile ">
+            <div class="subtitle-part-image d-flex justify-content-center align-items-center"> <i
+                class='	far fa-handshake' style='font-size:25px;color:white'></i></div>
+            <div class="subtitile1">Build Confidence</div>
+            <!-- <div class="subtitile2">You can trust us</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Our products section -->
+
+  <div class="fluid-container" id="products">
+    <h1 class="mt-4 mb-3 testimonial-heading">Products</h1>
+    <div class="row testimonial-row" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-md-12">
+        <div id="cards-slider" class="owl-carousel">
+
+          <div class="card-item shadow p-3 mb-5 bg-white rounded ">
+            <!-- list group item-->
+            <li class="list-group-item" onclick="window.location.href='./products.html'" style="cursor: pointer;">
+              <!-- Custom content-->
+              <img src="./images/products/img-1.jpg" alt="Generic placeholder image" width="200"
+                class="ml-lg-5 order-1 order-lg-2" style="width: 100% !important;margin-left: 0 !important;">
+              <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                <div class="media-body order-2 order-lg-1 w-100">
+                  <h5 class="mt-0 font-weight-bold mb-2">Aniwar</h5>
+                  <p class="font-italic text-muted mb-0 small">Exciting animal trump card game</p>
+                  <div class="d-flex align-items-center justify-content-between mt-1">
+                    <h6 class="font-weight-bold my-2">&#8377;349.00</h6>
+                    <a class="btn-sm btn-primary text-white orderBtn" href="./products.html#games">Explore</a>
+                    <ul class="list-inline small">
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End -->
+            </li>
+            <!-- End -->
+          </div>
+
+          <div class="card-item  shadow p-3 mb-5 bg-white rounded">
+            <!-- list group item-->
+            <li class="list-group-item" onclick="window.location.href='./products.html'" style="cursor: pointer;">
+              <!-- Custom content-->
+              <img src="./images/products/img-2.png" alt="Generic placeholder image" width="200"
+                class="ml-lg-5 order-1 order-lg-2" style="width: 100% !important;margin-left: 0 !important;">
+              <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                <div class="media-body order-2 order-lg-1 w-100">
+                  <h5 class="mt-0 font-weight-bold mb-2">Rapid 5</h5>
+                  <p class="font-italic text-muted mb-0 small"> Exciting calculation based game.</p>
+
+                  <div class="d-flex align-items-center justify-content-between mt-1">
+                    <h6 class="font-weight-bold my-2">&#8377;749.00</h6>
+                    <a class="btn-sm btn-primary text-white orderBtn" href="./products.html#games">Explore</a>
+                    <ul class="list-inline small">
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End -->
+            </li>
+            <!-- End -->
+          </div>
+
+          <div class="card-item shadow p-3 mb-5 bg-white rounded ">
+            <!-- list group item -->
+            <li class="list-group-item" onclick="window.location.href='./products.html'" style="cursor: pointer;">
+              <img src="./images/products/img-3.png" alt="Generic placeholder image" width="200"
+                class="ml-lg-5 order-1 order-lg-2" style="width: 100% !important;margin-left: 0 !important;">
+              <!-- Custom content-->
+              <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                <div class="media-body order-2 order-lg-1 w-100">
+                  <h5 class="mt-0 font-weight-bold mb-2">Knowledge Box</h5>
+                  <p class="font-italic text-muted mb-0 small">
+                    Unbox your child's potential.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-1">
+                    <h6 class="font-weight-bold my-2">&#8377;1199.00</h6>
+                    <a class="btn-sm btn-primary text-white orderBtn" href="./products.html#activityBox">Explore</a>
+                    <ul class="list-inline small">
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End -->
+            </li>
+            <!-- End -->
+          </div>
+
+          <div class="card-item shadow p-3 mb-5 bg-white rounded ">
+            <!-- list group item-->
+            <li class="list-group-item" onclick="window.location.href='./products.html'" style="cursor: pointer;">
+              <!-- Custom content-->
+              <img src="./images/products/img-1.jpg" alt="Generic placeholder image" width="200"
+                class="ml-lg-5 order-1 order-lg-2" style="width: 100% !important;margin-left: 0 !important;">
+              <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                <div class="media-body order-2 order-lg-1 w-100">
+                  <h5 class="mt-0 font-weight-bold mb-2">Aniwar</h5>
+                  <p class="font-italic text-muted mb-0 small">Exciting animal trump card game</p>
+                  <div class="d-flex align-items-center justify-content-between mt-1">
+                    <h6 class="font-weight-bold my-2">&#8377;349.00</h6>
+                    <a class="btn-sm btn-primary text-white orderBtn" href="./products.html#games">Explore</a>
+                    <ul class="list-inline small">
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                      <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- End -->
+            </li>
+            <!-- End -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Our products section -->
+
+
+  <!-- Board Games Benefits  section-->
+  <div class="container-fluid my-5 relative" style=" background-color: #f1f3f6; ">
+
+    <div class="row d-flex align-items-stretch" data-aos="fade-up">
+
+      <div class="col-lg-6 py-4">
+        <h5 class="pb-3">Game Benefits</h5>
+        <h1>
+          Benefits of Playing <br />
+          Varoh’s Games
+        </h1>
+        <p class="pt-4">
+          A game, generally, adds joy to life, but card/board games additionally teach some unique skills, increase
+          brain function and bring people closer. Varoh’s Card and Board games are a great way to have fun and learn new
+          skills, while giving a strong sense of individuality and creativity and a great chance to level up the power
+          of problem-solving skill. Play anywhere and anytime!!
+
+        </p>
+
+      </div>
+      <div class="col-lg-6 mt-4">
+        <img class="img-fluid rounded mb-4" src="./images/board-games-benefits.jpeg" alt="benefits img" />
+      </div>
+    </div>
+  </div>
+
+  <!-- End Board Games Benefits -->
+
+  <!-- Testimonials Section -->
+
+
+  <div class="fluid-container" id="testimonials" >
+    <h1 class="mt-4 mb-3 testimonial-heading">WHAT PEOPLE SAY?</h1>
+    <div class="row testimonial-row" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-md-12">
+        <div id="testimonial-slider" class="owl-carousel">
+          <div class="testimonial shadow-sm">
+            <div class="pic">
+              <img src="./images/testimonials/image-1.jpg" alt="testimonial-img">
+            </div>
+
+            <p class="description minimize">Thank you Varoh Games for the activity sheets. My kid really looks forward
+              to solving the puzzles especially number based puzzles. He is learning from playway method.</p>
+            <div class="testimonial-content">
+              <div class="testimonial-profile">
+                <h3 class="name">Monika Choraria</h3>
+                <span class="post">Ghaziabad
+
+                </span>
+              </div>
+              <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="testimonial shadow-sm">
+            <div class="pic">
+              <img src="./images/testimonials/image-2.jpg" alt="testimonial-img">
+            </div>
+
+            <p class="description minimize">It’s a great initiative by Varoh Games. You have interesting and exciting
+              topics in activity sheets that helps my kids to learn more and more.keep up the great work!</p>
+            <div class="testimonial-content">
+              <div class="testimonial-profile">
+                <h3 class="name">Sunita Pincha</h3>
+                <span class="post">Kolkata</span>
+              </div>
+              <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="testimonial shadow-sm">
+            <div class="pic">
+              <img src="./images/testimonials/image-3.png" alt="testimonial-img">
+            </div>
+
+            <p class="description minimize">There hasn't been a single activity sheet of Knowledge Capsule which my son
+              has not completed. He really loves doing these over and over again and is looking forward to grab the new
+              volume. I, as a parent, am equally satisfied with this purchase as it covers various topics which I wanted
+              my child to know, and that too in a playway manner. Highly recommended. Also not to forget the amazing
+              AniWar game for my animals lover son. Kudos to Varoh Games. Looking forward to many more games and fun.
+
+
+
+
+            </p>
+            <div class="testimonial-content ">
+              <div class="testimonial-profile">
+                <h3 class="name">Payal Deora</h3>
+                <span class="post">Gurgaon</span>
+              </div>
+              <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="testimonial shadow-sm">
+            <div class="pic">
+              <img src="./images/testimonials/image-4.jpg" alt="testimonial-img">
+            </div>
+
+            <p class="description minimize">I purchased Ani-War for my children from Amazon. When I opened the game, my
+              first impression was that it is similar to various other trump cards available in the market. However,
+              when we started playing
+              the game and understood the use of action cards, we found the game to be very interesting and different.
+              Now we are really hooked to this game and play almost every night. My children now know various funfacts
+              about
+              different animals which they use to impress their friends!
+            </p>
+            <div class="testimonial-content">
+              <div class="testimonial-profile">
+                <h3 class="name">Vinita Agarwal</h3>
+                <span class="post">Siliguri</span>
+              </div>
+              <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="testimonial shadow-sm">
+            <div class="pic">
+              <img src="./images/testimonials/image-5.jpg" alt="testimonial-img">
+            </div>
+
+            <p class="description minimize">Aniwar is an amazing game! It is very helpful in learning some basic facts
+              about the animal world. My daughter loved it!
+            </p>
+            <div class="testimonial-content">
+              <div class="testimonial-profile">
+                <h3 class="name">Anshul Ghorawat</h3>
+                <span class="post">Bengaluru</span>
+              </div>
+              <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End testimonials Section -->
+
+  <!-- ======= Contact Section ======= -->
+
+  <section id="contact" class="contact">
+    <div class="container-fluid">
+      <div class="section-title">
+        <h2 class="contactHeading">CONTACT US</h2>
+      </div>
+      <div class="px-5 pt-3 ">
+        <p class="fs-4" style="font-size: 1.1em;">Anyone looking to partner Varoh Games for selling the products or
+          for other collaborations connect to us by sending an email to <a
+            href="mailto:contact@varohgames.com">contact@varohgames.com</a>.
+          Greater quantities attract greater discounts. Anyone looking for purchase in bulk, get additional discount.
+          Ping us on whatsapp at <a
+            href="https://wa.me/919748363769?text=I want to know more about the products of Varoh Games."
+            target="_blank" rel="noreferrer noopener">+91 9748363769</a>.</p>
+      </div>
+
+      <div class="row mx-0">
+        <div class="col-lg-6">
+          <div class="row d-flex align-items-stretch ">
+            <div class="col-lg-6   info" data-aos="fade-up">
+              <i class="bx bx-map"></i>
+              <h4>Address</h4>
+              <p>A-403, Twins CHS Limited,
+                <br />Sector 20, Kharghar <br>
+                Navi Mumbai 410210
+
+              </p>
+            </div>
+            <div class="col-lg-6 info" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-phone"></i>
+              <h4>Call Us</h4>
+              <p>+91 9748363769</p>
+            </div>
+            <div class="col-lg-6 info" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-envelope"></i>
+              <h4>Email Us</h4>
+              <p>contact@varohgames.com<br /></p>
+            </div>
+            <div class="col-lg-6 info" data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-time-five"></i>
+              <h4>Working Hours</h4>
+              <p>Mon - Fri: 9AM to 5PM<br />Saturday: 9AM to 1PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 ">
+          <form action="https://varohgames.pythonanywhere.com/auth/contact_us" onsubmit="sendFeedBack(event)">
+            <div class="form-group">
+              <input placeholder="Your Name" type="text" name="name" class="form-control" id="name" data-rule="minlen:4"
+                data-msg="Please enter at least 4 chars" required />
+
+            </div>
+            <div class="form-group">
+              <input placeholder="Your Email" type="email" class="form-control" name="fb_email" id="fb_email"
+                data-rule="email" data-msg="Please enter a valid email" required />
+
+            </div>
+            <div class="form-group">
+              <input placeholder="Subject" type="text" class="form-control" name="subject" id="subject"
+                data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" required />
+
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Feedback" class="form-control" name="message" id="message" rows="5"
+                data-rule="required" data-msg="Please write something for us" required></textarea>
+
+            </div>
+            <div class="text-center">
+              <button type="submit">Send Feedback</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Contact Section -->
+
+  <!-- footer-links -->
+  <div class="footer-links" style="background-color:#192e64;color:whitesmoke">
+    <div class="row my-0">
+      <div class="col-lg-3 col-md-6 footer-contact">
+        <h4 class="my-4">Varoh Games</h4>
+        <p><i class="fa fa-map-marker mx-2 "></i>A-403, Twins CHS Limited,
+          <br>
+          Navi Mumbai 410210,
+          <br>Maharashtra
+        </p>
+        <p><i class="fa fa-phone  mx-2 "></i><a href="tel:+919748363769">+91 9748363769</a>
+        </p>
+        <p><i class="fa fa-envelope  mx-2"></i> <a href="mailto:contact@varohgames.com">contact@varohgames.com</a></p>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6 usefulLinks">
+        <h4 class="my-4">Useful Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#about">About us</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./termsofservice.html" target="_blank" rel="noreferrer noopener">Terms of service</a></li>
+          <li><a href="./privacypolicy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6">
+        <h4 class="my-4">Products</h4>
+        <ul>
+          <li><a href="./products.html#games">Games</a></li>
+          <li><a href="./products.html#activityBox">Knowledge Box</a></li>
+          <li><a href="./products.html#specialBooks">Varoh's Books</a></li>
+          <li>
+            <a href="./products.html#knowledgeCapsules">Knowledge Capsules</a>
+          </li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h4 class="my-4">Our Social Networks</h4>
+        <div class="py-2  text-center">
+          <a href="https://www.facebook.com/VarohGames/"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
+          <a href="https://www.youtube.com/channel/UCfy0-7GgVMRZ-ogiixeSgmg/featured "><i
+              class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
+          <a href="https://www.instagram.com/varohgames?r=nametag"><i
+              class="fab fa-instagram fa-2x text-danger mx-3"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer" style="font-size: 15px;">
+    <p><a href="./index.html"><strong>Varoh Games</strong></a> &copy; <span id="year"></span> | All
+      Rights Reserved</p>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Back To  Top Button -->
+  <div class="container">
+    <a href="#" onclick="topFunction()" id="topBtn" class="back-to-top" title="Go to top"><svg width="2em" height="2em"
+        viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+      </svg></a>
+  </div>
+  <!-- preloader -->
+  <!-- <div id="preloader"></div> -->
+
+
+  <!-- <div class="container">
+      <a  class="whats-app" href="https://wa.me/919390881140?text=I want to know more about VarohGames" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" class="my-float"  width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403,5.633C16.708,3.936,14.454,3.001,12.053,3 c-4.948,0-8.976,4.027-8.978,8.977c0,1.582,0.413,3.126,1.198,4.488L3,21.116l4.759-1.249c1.312,0.715,2.788,1.092,4.29,1.093h0.004 l0,0c4.947,0,8.975-4.027,8.977-8.977C21.03,9.585,20.098,7.33,18.403,5.633 M12.053,19.445H12.05 c-1.339-0.001-2.652-0.36-3.798-1.041l-0.272-0.162l-2.824,0.741l0.753-2.753l-0.177-0.282c-0.747-1.188-1.141-2.561-1.141-3.971 c0.002-4.114,3.349-7.461,7.465-7.461c1.993,0.001,3.866,0.778,5.275,2.188c1.408,1.411,2.184,3.285,2.183,5.279 C19.512,16.097,16.165,19.445,12.053,19.445 M16.146,13.856c-0.225-0.113-1.327-0.655-1.533-0.73 c-0.205-0.075-0.354-0.112-0.504,0.112s-0.58,0.729-0.711,0.879s-0.262,0.168-0.486,0.056s-0.947-0.349-1.804-1.113 c-0.667-0.595-1.117-1.329-1.248-1.554s-0.014-0.346,0.099-0.458c0.101-0.1,0.224-0.262,0.336-0.393 c0.112-0.131,0.149-0.224,0.224-0.374s0.038-0.281-0.019-0.393c-0.056-0.113-0.505-1.217-0.692-1.666 C9.627,7.787,9.442,7.845,9.304,7.839c-0.13-0.006-0.28-0.008-0.429-0.008c-0.15,0-0.393,0.056-0.599,0.28 C8.07,8.336,7.491,8.878,7.491,9.982c0,1.104,0.804,2.171,0.916,2.321c0.112,0.15,1.582,2.415,3.832,3.387 c0.536,0.231,0.954,0.369,1.279,0.473c0.537,0.171,1.026,0.146,1.413,0.089c0.431-0.064,1.327-0.542,1.514-1.066 c0.187-0.524,0.187-0.973,0.131-1.067C16.52,14.025,16.369,13.968,16.146,13.856"></path></svg>
+      </a>
+    </div> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="./scripts/auth_header.js"></script>
+  <script src="./scripts/contact_us.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+  <!--script for footer dynamically changing year -->
+  <script>var year = new Date().getFullYear();
+    document.getElementById("year").innerHTML = year;</script>
+  <!-- cdn for AOS library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      if (!menuOpen) {
+        menuBtn.classList.add('open');
+        menuOpen = true;
+      } else {
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+      }
+    });
+
+    AOS.init({
+      once: true,
+      duration: 1200
+    });
+  </script>
+
+  <!-- preloader script -->
+  <script>
+    // Preloader
+    $(window).on('load', function () {
+      if ($('#preloader').length) {
+        $('#preloader').delay(100).fadeOut('slow', function () {
+          $(this).remove();
+        });
+      }
+    });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+  <!--End preloader script -->
+
+  <!-- script for products card sliders  -->
+  <script>$(document).ready(function () {
+      $("#cards-slider").owlCarousel({
+        items: 3,
+        itemsDesktop: [1060, 2],
+        itemsDesktopSmall: [979, 2],
+        itemsTablet: [768, 2],
+        itemsMobile: [650, 1],
+        pagination: false,
+        navigation: true,
+        navigationText: ["", ""],
+        autoPlay: true
+      });
+    });</script>
+  <!-- END script for products card sliders  -->
+
+
+  <!-- cdn and script for testimonials  -->
+  <script>$(document).ready(function () {
+      $("#testimonial-slider").owlCarousel({
+        items: 3,
+        itemsDesktop: [1000, 2],
+        itemsDesktopSmall: [979, 2],
+        itemsTablet: [768, 2],
+        itemsMobile: [650, 1],
+        pagination: false,
+        navigation: true,
+        navigationText: ["", ""],
+        autoPlay: true
+      });
+    });</script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <!--END  cdn and script for testimonials  -->
+
+  <script>
+    var mybutton = document.getElementById("topBtn");
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      } else {
+        document.getElementById("header").style.top = "-119px";
+        mybutton.style.display = "block";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+
+  <!-- form validation -->
+  <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+  </script>
+
+
+
+  <!-- End form validation -->
+
+  <!-- script for toggables tabs color change -->
+  <script>
+    $(document).ready(function () {
+
+      $('ul.nav-tabs > li')
+        .click(function (e) {
+          $('ul.nav-tabs > li')
+            .removeClass('active');
+          $(this).addClass('active');
+        });
+    });
+
+  </script>
+  <!--End script for toggables tabs color change -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator/dist/jbvalidator.min.js"></script> -->
+
+  <script src="dist/jbvalidator.min.js"></script>
+  <script>
+    $(function () {
+
+      let validator = $('form.needs-validation').jbvalidator({
+        errorMessage: true,
+        successClass: true,
+        language: "dist/lang/en.json"
+      });
+
+      //custom validate methode
+      validator.validator.custom = function (el, event) {
+        if ($(el).is('[name=password]') && $(el).val().length < 5) {
+          return 'Your password is too weak.';
+        }
+      }
+    });
+  </script>
+
+  <script>
+
+
+    $('.navbar-collapse a').click(function () {
+
+
+      $(".navbar-collapse").collapse('hide');
+      $(".menu-btn").removeClass("open").addClass("collapsed");
+      $(".menu-btn__burger ").addClass("collapsed");
+      $("#navigation").removeClass("show");
+
+
+    });
+  </script>
+  <!-- script for less or more button -->
+  <script>
+    var minimized_elements = $("p.minimize");
+
+    minimized_elements.each(function () {
+      var t = $(this).text();
+      if (t.length < 167) return;
+
+      $(this).html(
+        t.slice(0, 167) +
+        '<span>... </span><a href="#" class="more">More</a>' +
+        '<span style="display:none;">' +
+        t.slice(167, t.length) +
+        ' <a href="#" class="less">Less</a></span>'
+      );
+    });
+
+    $("a.more", minimized_elements).click(function (event) {
+      event.preventDefault();
+      $(this).hide().prev().hide();
+      $(this).next().show();
+    });
+
+    $("a.less", minimized_elements).click(function (event) {
+      event.preventDefault();
+      $(this).parent().hide().prev().show().prev().show();
+    });
+  </script>
+  <!-- END script for less or more button -->
+
+
+
+</body>
+
+</html>

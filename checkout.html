@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="pwa/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="pwa/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="pwa/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+
+  <link async href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <!-- custom style.css -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style1.css" />
+
+  <title>Shopping Cart</title>
+
+  <style>
+    .row {
+      margin: 0 !important;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    @media (min-width:1200px) {
+
+      /* Works on Firefox */
+      .scrollBar {
+        scrollbar-width: thin;
+        scrollbar-color: blue orange;
+      }
+
+      /* Works on Chrome, Edge, and Safari */
+      .scrollBar::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      .scrollBar::-webkit-scrollbar-track {
+        background: none;
+      }
+
+      .scrollBar::-webkit-scrollbar-thumb {
+        background-color:#b881ec;
+        border-radius: 20px;
+        /* border: 3px solid orange; */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- header -->
+  <header id="header">
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color:#b8edf9">
+
+      <a href="./index.html">
+        <img src="./images/varoh-games-logo.png" alt="Varoh Games Logo" height="85px" width="90px" />
+      </a>
+      <div class="cart-btn-1" id="cartic" onclick="cartic()">
+        <ul class="navbar-right">
+          <li><a href="#" id="cart1"><i class="fa fa-shopping-cart fa-2x"></i><span class="badge"
+                id="badge1">3</span></a></li>
+        </ul>
+      </div>
+      <div class="cart-btn-2" id="cartic" onclick="cartic()">
+        <ul class="navbar-right">
+          <li><a href="#" id="cart2"><i class="fa fa-shopping-cart fa-2x "></i><span class="badge"
+                id="badge2">3</span></a></li>
+        </ul>
+      </div>
+
+      </div>
+      <div class="menu-btn" data-target="#navigation" data-toggle="collapse">
+        <div class="menu-btn__burger navbar-toggler-icon" data-target="#navigation" data-toggle="collapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+
+        </div>
+      </div>
+
+      </div>
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="./index.html" class="li l nav-link" style="background-color: #8a2be2">
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#about" class="li l nav-link" style="background-color: #ffa500">
+              <span>About Us</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./products.html" class="li l nav-link" style="background-color: #b22222">
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#testimonials" class="li l nav-link" style="background-color: #6b8e23">
+              <span>Testimonials</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#contact" class="li l nav-link" style="background-color: #008080">
+              <span>Contact Us</span>
+            </a>
+          </li>
+          <li class="nav-item " id="loginbtn1">
+            <a href="#" class="li l nav-link dropdown-toggle" style="background-color: #31b318"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span>My Account</span>
+
+            </a>
+            <ul class="dropdown-menu mt-5 h-50 w-100 shadow-lg p-3 mb-5 bg-white rounded ">
+              <li id="myorders"><a class="dropdown-item " onclick="myorders()" style="cursor:pointer">My Orders</a></li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li id="auth_header_btn1" style="cursor:pointer"></li>
+            </ul>
+
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto l">
+          <li class="nav-item dropdown">
+            <!--  my account button -->
+            <div class="btn-group  dropleft">
+              <button type="button" id="loginbtn2" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                My Account
+              </button>
+              <ul class="dropdown-menu">
+                <li id="myorders"><a class="dropdown-item" onclick="myorders()" style="cursor:pointer">My Orders</a>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li id="auth_header_btn2" style="cursor:pointer"></li>
+              </ul>
+            </div>
+            <!-- END my account button -->
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- End header -->
+
+
+  <!-- modal for login/register -->
+  <div id="auth_modal">
+
+  </div>
+  <!--End modal for login/register -->
+
+
+
+  <!-- modal for checkout -->
+  <!-- Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Amount to be paid :&#8377; <span
+              id="total_amount_modal"></span></h5>
+
+          <button type="button" class="close " data-bs-dismiss="modal" aria-label="Close">X</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-check mb-3">
+            <input onclick="dCod()" style="height:1.5em; width:1.5em;" class="form-check-input" type="radio"
+              name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label style="font-size: 18px;" class="form-check-label fs-3 mx-3" for="flexRadioDefault2">
+              Online Payment
+            </label>
+          </div>
+          <div class="form-check my-3 ">
+            <input onclick="iCod()" style="height:1.5em; width:1.5em;" class="form-check-input " type="radio"
+              name="flexRadioDefault" id="cod">
+            <label style="font-size: 18px;" class="form-check-label fs-3 mx-3" for="cod">
+              Cash On Delivery (Delivery charge &#8377;<span id="cod_extra_charges"></span> extra)
+            </label>
+          </div>
+
+
+
+          <button onclick="makePayment()" id="placeOrder" class="btn btn-primary btn-lg btn-block mt-5" type="button">
+            <!-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> -->
+            Place Order
+          </button>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm " data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END modal for checkout -->
+
+
+
+
+  <main class="page my-5">
+    <section class="shopping-cart dark">
+      <div class="container">
+        <div class="block-heading">
+          <h2 style="text-align: center">Varoh Games Cart</h2>
+          <hr>
+        </div>
+        <div class="content">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <button onclick='localStorage.setItem("cart", "[]");window.location.reload()' type="button"
+                class="btn btn-danger float-right mb-3">Clear Cart</button>
+
+              <div id="cart-items" class="items scrollBar d-inline-block"
+                style="height: 300px; overflow-y:scroll; overflow-x: hidden;">
+
+
+              </div>
+              <div class="scrollBar" style="
+								background-color:#f9f5f1;;
+								border: 5px solid #02639c;
+								padding: 27px;
+								margin: 5px;
+                overflow-y: scroll;
+                overflow-x:hidden;
+               
+    							height: 240;
+								height: 300px;">
+
+                <h1>Shipping to:</h1>
+
+                <hr>
+                <section id="address_div">
+
+
+                </section>
+
+                <label>
+                  <button onclick="addAddress()" data-toggle="modal" data-target="#myModal" type="button"
+                    class="btn btn-danger">Add Address</button>
+                </label>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-lg-4" style="    margin-bottom: 13px;
+            background: antiquewhite;
+            height: 615px;">
+              <div class="summary">
+                <h3 style="        font-weight: 600;
+								 color: brown;
+								 text-align: center;font-size: 35px;
+    font-weight: 600;
+
+
+	">Summary</h3>
+                <hr id="sumary">
+                <div class="summary-item"><span class="text" style="font-size: 24px;
+									font-weight: 500;">Subtotal</span><span class="price" style=" 
+    float: right;
+    font-weight: 500;
+    font-size: 24px;" id="cart_price">Rs.0</span></div>
+                <div class="summary-item"><span style="font-size: 20px;
+									font-weight: 500;" class="text">Discount</span><span class="price" style="    float: right;
+    font-weight: 500;" id="discount_price">Rs.0</span></div>
+                <div class="summary-item"><span style="font-size: 20px;
+									font-weight: 500;" class="text">Shipping</span><span class="price" style="    float: right;
+	font-weight: 500;" id="shipping_price">Rs.0</span></div>
+                <hr id="sumary">
+                <div class="summary-item"><span style=" color: darkred;font-size: 33px;
+									font-weight: 500;" class="text">Total</span><span class="price" style=" font-size:33px ;color: darkred;float: right;
+    font-weight: 500;" id="total_price">Rs.0</span></div>
+                <div class="couponCode my-2 " style="background-color: #fd8663;
+									 height: 98px;">
+
+                  <p style="margin: 30px 10px 43px 30px;"><img style="height: 49px;
+											margin-top: 9px;"
+                      src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgaWQ9IkZpbGxlZF9zdHJva2VfY3V0X0V4IiBkYXRhLW5hbWU9IkZpbGxlZCBzdHJva2UgY3V0IEV4Ij48cGF0aCBkPSJtMzczLjg2MiAzMDAuMDU5aDRhMCAwIDAgMCAxIDAgMHYxNTJhMCAwIDAgMCAxIDAgMGgtNjRhMCAwIDAgMCAxIDAgMHYtOTJhNjAgNjAgMCAwIDEgNjAtNjB6IiBmaWxsPSIjZmJiOGIwIiB0cmFuc2Zvcm09Im1hdHJpeCgtLjg5OCAtLjQzOSAuNDM5IC0uODk4IDQ5MS4zMiA4NjUuODM4KSIvPjxwYXRoIGQ9Im0zMzAuNzQzIDI2OC4wNTloNGEwIDAgMCAwIDEgMCAwdjE1MmEwIDAgMCAwIDEgMCAwaC02NGEwIDAgMCAwIDEgMCAwdi05MmE2MCA2MCAwIDAgMSA2MC02MHoiIGZpbGw9IiNmYmI4YjAiIHRyYW5zZm9ybT0ibWF0cml4KC0uODk4IC0uNDM5IC40MzkgLS44OTggNDIzLjUyOCA3ODYuMTQ3KSIvPjxwYXRoIGQ9Im0zNjAuNjA1IDMzMi43NjMtMjU5LjM0IDczYTEwIDEwIDAgMCAxIC0xMi4zMzUtNi45MTNsLTQwLjMyNS0xNDMuMjUgMjY0IC40eiIgZmlsbD0iI2ZhYzg1MCIvPjxnPjxyZWN0IGZpbGw9IiNmYTdkMjkiIGhlaWdodD0iMjU2IiByeD0iMTAiIHdpZHRoPSI0MDAiIHg9IjI0LjYwNSIgeT0iMjQiLz48cGF0aCBkPSJtNjQgMTQ0aDE3NnY5NmgtMTc2eiIgZmlsbD0iI2ZhYzg1MCIvPjxwYXRoIGQ9Im0xNDggMTA0aDI4YTAgMCAwIDAgMSAwIDB2MjBhMjAgMjAgMCAwIDEgLTIwIDIwaC0yOGEwIDAgMCAwIDEgMCAwdi0yMGEyMCAyMCAwIDAgMSAyMC0yMHoiIGZpbGw9IiNmZmZlZmQiLz48cGF0aCBkPSJtODAgMTA0aDI4YTIwIDIwIDAgMCAxIDIwIDIwdjIwYTAgMCAwIDAgMSAwIDBoLTI4YTIwIDIwIDAgMCAxIC0yMC0yMHYtMjBhMCAwIDAgMCAxIDAgMHoiIGZpbGw9IiNmZmZlZmQiLz48cGF0aCBkPSJtMjQwIDEzNmgtNTguN2EyNy44MzYgMjcuODM2IDAgMCAwIDIuNy0xMnYtMjBhOCA4IDAgMCAwIC04LThoLTI4YTI3LjkxNyAyNy45MTcgMCAwIDAgLTIwIDguNDIzIDI3LjkxNyAyNy45MTcgMCAwIDAgLTIwLTguNDIzaC0yOGE4IDggMCAwIDAgLTggOHYyMGEyNy44MzYgMjcuODM2IDAgMCAwIDIuNyAxMmgtMTAuN2E4IDggMCAwIDAgLTggOHY5NmE4IDggMCAwIDAgOCA4aDE3NmE4IDggMCAwIDAgOC04di05NmE4IDggMCAwIDAgLTgtOHptLTggNDhoLTExMnYtMzJoMTEyem0tODQtNzJoMjB2MTJhMTIuMDEzIDEyLjAxMyAwIDAgMSAtMTIgMTJoLTIwdi0xMmExMi4wMTMgMTIuMDEzIDAgMCAxIDEyLTEyem0tNjAgMTJ2LTEyaDIwYTEyLjAxMyAxMi4wMTMgMCAwIDEgMTIgMTJ2MTJoLTIwYTEyLjAxMyAxMi4wMTMgMCAwIDEgLTEyLTEyem0xNiAyOHYzMmgtMzJ2LTMyem0tMzIgNDhoMzJ2MzJoLTMyem00OCAzMnYtMzJoMTEydjMyeiIvPjxwYXRoIGQ9Im0zMDggNTZoNzZhMCAwIDAgMCAxIDAgMHYxMmEyMCAyMCAwIDAgMSAtMjAgMjBoLTc2YTAgMCAwIDAgMSAwIDB2LTEyYTIwIDIwIDAgMCAxIDIwLTIweiIgZmlsbD0iI2ZmZmVmZCIvPjxwYXRoIGQ9Im0zNjQgOTZoLTc2YTggOCAwIDAgMSAtOC04di0xMmEyOC4wMzIgMjguMDMyIDAgMCAxIDI4LTI4aDc2YTggOCAwIDAgMSA4IDh2MTJhMjguMDMyIDI4LjAzMiAwIDAgMSAtMjggMjh6bS02OC0xNmg2OGExMi4wMTMgMTIuMDEzIDAgMCAwIDEyLTEydi00aC02OGExMi4wMTMgMTIuMDEzIDAgMCAwIC0xMiAxMnoiLz48cGF0aCBkPSJtNTYgNTZoNTZ2MTZoLTU2eiIvPjxwYXRoIGQ9Im0xMjggNTZoMTIwdjE2aC0xMjB6Ii8+PGc+PHBhdGggZD0ibTI4MCAxMjBoMzJ2MTZoLTMyeiIvPjxwYXRoIGQ9Im0zMjggMTIwaDY0djE2aC02NHoiLz48L2c+PGc+PHBhdGggZD0ibTM2MCAxNjBoMzJ2MTZoLTMyeiIvPjxwYXRoIGQ9Im0yODAgMTYwaDY0djE2aC02NHoiLz48L2c+PC9nPjxwYXRoIGQ9Im0zNjAgNTA0di0xMzZsLTQ5LjEtNzkuOTM5YTYwIDYwIDAgMCAxIDE1LjYtODEuMjdsOS41LTYuNzkxIDY0IDgwaDE0LjYwNWExMCAxMCAwIDAgMCAxMC0xMHYtMTY2aDE1YTIwIDIwIDAgMCAxIDE5LjYxMiAxNi4wNzhsMjguNzgzIDE0My45MjItMjQgMTEydjEyOHoiIGZpbGw9IiNmZmQ0Y2YiLz48cGF0aCBkPSJtNDcyIDUwNGgtMTZ2LTEyOGE4LjAwNiA4LjAwNiAwIDAgMSAuMTc4LTEuNjc2bDguNTcxLTQwIDE1LjY0NSAzLjM1Mi04LjM5NCAzOS4xNzJ6Ii8+PHBhdGggZD0ibTQ5NS44NDUgMjYyLjQzMS0yOC43ODUtMTQzLjkyMWEyOC4wNzUgMjguMDc1IDAgMCAwIC0yNy40Ni0yMi41MWgtNy42di02MmExOC4wMjEgMTguMDIxIDAgMCAwIC0xOC0xOGgtMzgwYTE4LjAyMSAxOC4wMjEgMCAwIDAgLTE4IDE4djYyaDE2di02MmEyIDIgMCAwIDEgMi0yaDM4MGEyIDIgMCAwIDEgMiAydjIzNmMwIC40NjktLjEgMi0xLjM5NSAyaC0xMC43NmwtNjEuNi03N2E4IDggMCAwIDAgLTEwLjktMS41MTJsLTkuNTA3IDYuNzkxYTY3Ljk0OSA2Ny45NDkgMCAwIDAgLTI2LjQ5MyA3MS43MjFoLTI2MS4zNDVhMiAyIDAgMCAxIC0yLTJ2LTE1OGgtMTZ2MTU4YTE4LjAyMSAxOC4wMjEgMCAwIDAgMTggMThoMTUuNDE1bDMxLjgxNCAxMTMuMDE5YTE3Ljk5MyAxNy45OTMgMCAwIDAgMjIuMiAxMi40NDlsMTQwLjEyNi0zOS40NDUtMTAuMTQxIDIwLjczM2E4IDggMCAwIDAgMy42NzEgMTAuN2wzLjU5NCAxLjc1OGE2Ny40MTkgNjcuNDE5IDAgMCAwIDQyLjYxMiA1LjcyNGwtNi43NTggMTMuODE3YTggOCAwIDAgMCAzLjY3MSAxMC43bDMuNTk0IDEuNzU4YTY4LjEyOCA2OC4xMjggMCAwIDAgNjguMi00Ljg5M3Y2OS42OGgxNnYtMTM2YTguMDA4IDguMDA4IDAgMCAwIC0xLjE4My00LjE4OGwtNDkuMS03OS45MzljLS4wMjktLjA0Ni0uMDU4LS4wOTMtLjA4OC0uMTM5YTUxLjk1IDUxLjk1IDAgMCAxIDEzLjUxNi03MC40MzRsMy4zNDItMi4zODggNTkuMjY4IDc0LjA4OGE4IDggMCAwIDAgNi4yNDcgM2gxNC42MDVjOS43NTQgMCAxNy4zOTUtNy45MDYgMTcuMzk1LTE4di0xNThoNy42YTEyLjAzNCAxMi4wMzQgMCAwIDEgMTEuNzY3IDkuNjQ3bDI4LjQ2IDE0Mi4zLTExLjY1MyA1NC4zOCAxNS42NDQgMy4zNTIgMTItNTZhOC4wMDcgOC4wMDcgMCAwIDAgLjAyNy0zLjI0OHptLTI0NC40NzIgMTMyLjAzMyAxMi44NDEtMjYuMjU2IDYxLjk2Ny0xNy40NDMtOC45MDkgMTguMjEzYTUyLjAwOCA1Mi4wMDggMCAwIDEgLTY1LjkgMjUuNDg2em0xMDAuNjI3IDE4LjgzNmE1Mi4wOCA1Mi4wOCAwIDAgMSAtNTcuNTA4IDEzLjE1OWwxMC42MzgtMjEuNzQ5YTY3LjUzIDY3LjUzIDAgMCAwIDI2LjUxNi0yOC43bDEwLjU4Ny0yMS42NDYgOS43NjcgMTUuOXptLTIyLjcyMi04MC4wMzEtMjMwLjE3OCA2NC43OTZhMiAyIDAgMCAxIC0yLjQ2OC0xLjM4MmwtMzAuNTk1LTEwOC42ODNoMjM1LjUzM3ExLjE4OCAyLjE4NyAyLjU1MSA0LjMxNXoiLz48L2c+PC9zdmc+" />
+                    <strong>Use Coupon Code:</strong>
+
+                    <input type="text" id="couponCode" name="pin" maxlength="4" size="4" disabled value=""
+                      style="width: 32%;"><strong> to avail</strong>
+                    <input type="text" id="couponCodeP" name="pin" maxlength="4" size="4" disabled value=""
+                      style="width: 16%;"><strong> off</strong>
+
+                    <input type="hidden" id="copun" name="copun" value="" />
+                    <input type="hidden" id="copun_price" name="copun_price" value="" />
+                  </p>
+                </div>
+                <div class="coupon" style="display: flex;
+									 align-items: flex-end;">
+                  <!-- <p>Use <span>UII!@#$</span>to avail <span>60% f</span></p> -->
+
+                  <input type="hidden" id="shipping_price_hidden" value="">
+
+                  <input type="text" id="copun_input" class="form-control text-uppercase" style="margin-right: 10px;
+										border-color: orangered" placeholder="Enter a valid coupon" aria-label="" aria-describedby="basic-addon1">
+                  <button onclick="fetchApplyCopun()" id="apply_copun_btn" type="button" style="width: 100%;"
+                    class="btn btn-warning">Apply Coupon </button>
+                  <button id="remove_copun_btn" onclick="removeCopun()" hidden="true" type="button" style="width: 100%;"
+                    class="btn btn-danger">Remove Coupon </button>
+                </div>
+                <hr id="sumary">
+
+                <!-- <form>
+                  <div class="checkboxes">
+                    <label class=" d-inline" for="cod"><input class="w-25" type="checkbox" style="    zoom: 1.6;
+                      margin-left: 4px;" id="cod"/><span style="font-size: 24px;">Cash On delivery</span></label>
+                    
+                  </div>
+                </form> -->
+
+                <!-- onclick="makePayment(event)" -->
+                <button onclick="checkout();" type="button" class="btn btn-primary btn-lg btn-block">Proceed With
+                  Payment</button>
+
+                <div class="ordercancel" style="display: flex;background-color: antiquewhite;margin-top: 9px;">
+                  <p style="
+                        color: black;
+                  margin-bottom: 1px;
+                ">Note:
+                    Order cancellation not allowed once it has been shipped.
+
+                  </p>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- footer-links -->
+  <div class="footer-links" style="background-color:#192e64;color:whitesmoke">
+    <div class="row my-0">
+      <div class="col-lg-3 col-md-6 footer-contact">
+        <h4 class="my-4">Varoh Games</h4>
+        <p><i class="fa fa-map-marker mx-2 "></i>A-403, Twins CHS Limited,
+          <br>
+          Navi Mumbai 410210,
+          <br>Maharashtra
+        </p>
+        <p><i class="fa fa-phone  mx-2 "></i><a href="tel:+919748363769">+91 9748363769</a>
+        </p>
+        <p><i class="fa fa-envelope  mx-2"></i> <a href="mailto:contact@varohgames.com">contact@varohgames.com</a></p>
+      </div>
+
+
+      <div class="col-lg-3 col-md-6 usefulLinks">
+        <h4 class="my-4">Useful Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#about">About us</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./termsofservice.html" target="_blank" rel="noreferrer noopener">Terms of service</a></li>
+          <li><a href="./privacypolicy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="my-4">Products</h4>
+        <ul>
+          <li><a href="./products.html#games">Games</a></li>
+          <li><a href="./products.html#activityBox">Knowledge Box</a></li>
+          <li><a href="./products.html#specialBooks">Varoh's Books</a></li>
+          <li>
+            <a href="./products.html#knowledgeCapsules">Knowledge Capsules</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="my-4">Our Social Networks</h4>
+        <div class="py-2  text-center">
+          <a href="https://www.facebook.com/VarohGames/"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
+          <a href="https://www.youtube.com/channel/UCfy0-7GgVMRZ-ogiixeSgmg/featured "><i
+              class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
+          <a href="https://www.instagram.com/varohgames?r=nametag"><i
+              class="fab fa-instagram fa-2x text-danger mx-3"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer" style="font-size: 15px;">
+    <p><a href="./index.html"><strong>Varoh Games</strong></a> &copy; <span id="year"></span> | All Rights Reserved</p>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Back To  Top Button -->
+  <div class="container">
+    <a href="#" onclick="topFunction()" id="topBtn" class="back-to-top" title="Go to top"><svg width="2em" height="2em"
+        viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+      </svg></a>
+  </div>
+
+
+  <!-- <div class="container">
+        <a  class="whats-app" href="https://wa.me/919390881140?text=I want to know more about VarohGames" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" class="my-float"  width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403,5.633C16.708,3.936,14.454,3.001,12.053,3 c-4.948,0-8.976,4.027-8.978,8.977c0,1.582,0.413,3.126,1.198,4.488L3,21.116l4.759-1.249c1.312,0.715,2.788,1.092,4.29,1.093h0.004 l0,0c4.947,0,8.975-4.027,8.977-8.977C21.03,9.585,20.098,7.33,18.403,5.633 M12.053,19.445H12.05 c-1.339-0.001-2.652-0.36-3.798-1.041l-0.272-0.162l-2.824,0.741l0.753-2.753l-0.177-0.282c-0.747-1.188-1.141-2.561-1.141-3.971 c0.002-4.114,3.349-7.461,7.465-7.461c1.993,0.001,3.866,0.778,5.275,2.188c1.408,1.411,2.184,3.285,2.183,5.279 C19.512,16.097,16.165,19.445,12.053,19.445 M16.146,13.856c-0.225-0.113-1.327-0.655-1.533-0.73 c-0.205-0.075-0.354-0.112-0.504,0.112s-0.58,0.729-0.711,0.879s-0.262,0.168-0.486,0.056s-0.947-0.349-1.804-1.113 c-0.667-0.595-1.117-1.329-1.248-1.554s-0.014-0.346,0.099-0.458c0.101-0.1,0.224-0.262,0.336-0.393 c0.112-0.131,0.149-0.224,0.224-0.374s0.038-0.281-0.019-0.393c-0.056-0.113-0.505-1.217-0.692-1.666 C9.627,7.787,9.442,7.845,9.304,7.839c-0.13-0.006-0.28-0.008-0.429-0.008c-0.15,0-0.393,0.056-0.599,0.28 C8.07,8.336,7.491,8.878,7.491,9.982c0,1.104,0.804,2.171,0.916,2.321c0.112,0.15,1.582,2.415,3.832,3.387 c0.536,0.231,0.954,0.369,1.279,0.473c0.537,0.171,1.026,0.146,1.413,0.089c0.431-0.064,1.327-0.542,1.514-1.066 c0.187-0.524,0.187-0.973,0.131-1.067C16.52,14.025,16.369,13.968,16.146,13.856"></path></svg>
+        </a>
+      </div> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="./scripts/auth_header.js"></script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!--script for footer dynamically changing year -->
+
+  <script>var year = new Date().getFullYear();
+    document.getElementById("year").innerHTML = year;</script>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      if (!menuOpen) {
+        menuBtn.classList.add('open');
+        menuOpen = true;
+      } else {
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+      }
+    });
+
+    // AOS.init({
+    //   once: true,
+    //   duration: 1200
+    // });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    var mybutton = document.getElementById("topBtn");
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      } else {
+        document.getElementById("header").style.top = "-119px";
+        mybutton.style.display = "none";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
+
+  <!-- form validation -->
+  <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+  </script>
+  <!-- End form validation -->
+
+  <!-- script for toggables tabs color change -->
+  <script>
+    $(document).ready(function () {
+
+      $('ul.nav-tabs > li')
+        .click(function (e) {
+          $('ul.nav-tabs > li')
+            .removeClass('active');
+          $(this).addClass('active');
+        });
+    }); 
+  </script>
+  <!--End script for toggables tabs color change -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator/dist/jbvalidator.min.js"></script> -->
+
+  <script src="dist/jbvalidator.min.js"></script>
+  <script>
+    $(function () {
+
+      let validator = $('form.needs-validation').jbvalidator({
+        errorMessage: true,
+        successClass: true,
+        language: "dist/lang/en.json"
+      });
+
+      //custom validate methode
+      validator.validator.custom = function (el, event) {
+        if ($(el).is('[name=password]') && $(el).val().length < 5) {
+          return 'Your password is too weak.';
+        }
+      }
+    });
+  </script>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="./scripts/checkout.js"></script>
+
+
+
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+
+  <!-- <script>
+  const cartic = () =>{
+
+if(localStorage.getItem("cart")!=null){
+  if(localStorage.getItem("cart").length!=0){
+    window.location.href = "./checkout.html";
+  }
+  else{
+    alert("Cart is empty");
+  }
+}
+else{
+  alert("Cart is empty");
+}
+}
+</script> -->
+
+
+</body>
+
+</html>

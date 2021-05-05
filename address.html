@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="pwa/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="pwa/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="pwa/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <!-- <script src="states.js"></script> -->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <title>form</title>
+</head>
+
+<body>
+  <script>
+    var state_arr = new Array("Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra & Nagar Haveli", "Daman & Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu & Kashmir", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal");
+
+    function print_state(state_id) {
+      // given the id of the <select> tag as function argument, it inserts <option> tags
+      var option_str = document.getElementById(state_id);
+      option_str.length = 0;
+      option_str.options[0] = new Option('Select State', '');
+      option_str.selectedIndex = 0;
+      for (var i = 0; i < state_arr.length; i++) {
+        option_str.options[option_str.length] = new Option(state_arr[i], state_arr[i]);
+      }
+    }
+  </script>
+  <div class="container col-lg-6 mx-auto">
+    <h1>Address</h1>
+    <form method="POST" onsubmit="addAddress(event)" class="needs-validation ">
+
+      <div class="form-group my-3"><label for="username">Full name (First and Last name)</label>
+        <input type="text" class="form-control" id="username" data-v-max-length="50" required>
+      </div>
+      <div class="form-group my-3"><label for="mobileNumber">Mobile number</label>
+        <input type="tel" class="form-control" id="mobileNumber" placeholder="10-digit mobile number without prefixes"
+          data-v-min-length="10" inputmode="tel" pattern="[0-9]+" data-v-max-length="10" required>
+      </div>
+      <div class="form-group my-3"><label for="pinCode">PIN code</label>
+        <input type="tel" class="form-control" id="pinCode" placeholder="6 digits [0-9] PIN code" data-v-min-length="6"
+          inputmode="tel" pattern="[0-9]+" data-v-max-length="6" required>
+      </div>
+      <div class="form-group my-3"><label for="flat">Flat,House no.,Building,Company, Apartment</label>
+        <input type="text" class="form-control" id="flat" data-v-max-length="100" required>
+      </div>
+      <div class="form-group my-3"><label for="area">Area,Colony,Street,Sector,Village</label>
+        <input type="text" class="form-control" id="area" data-v-max-length="100" required>
+      </div>
+      <div class="form-group my-3"><label for="landMark">Landmark</label>
+        <input type="text" class="form-control" id="landMark" placeholder="E.g. Near AIIMs Flyover,Behind Regal cinema"
+          data-v-max-length="100" required>
+      </div>
+      <div class="form-group my-3"><label for="town">Town/City</label>
+        <input type="text" class="form-control" id="town" data-v-max-length="100" required>
+      </div>
+      <div class="form-group my-3"><label for="state">State / Province / Region</label>
+        <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control"
+          required></select>
+        <script language="javascript">print_state("sts");</script>
+      </div>
+      <div class="form-check my-3">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+        <label class="form-check-label" for="invalidCheck">
+          Use as my default address.
+        </label>
+
+      </div>
+      <div class=" d-grid">
+
+
+
+
+        <input type="submit" id="address-submit-btn" class="btn-lg btn-primary" value="Add address">
+      </div>
+    </form>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator/dist/jbvalidator.min.js"></script>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+
+  <script src="./scripts/address.js"></script>
+  <!-- form validation -->
+
+  <script src="dist/jbvalidator.min.js"></script>
+  <script>
+    $(function () {
+
+      let validator = $('form.needs-validation').jbvalidator({
+        errorMessage: true,
+        successClass: true,
+        language: "dist/lang/en.json"
+      });
+
+      //custom validate methode
+      validator.validator.custom = function (el, event) {
+        if ($(el).is('[name=password]') && $(el).val().length < 5) {
+          return 'Your password is too weak.';
+        }
+      }
+    });
+  </script>
+  <!-- End form validation -->
+
+  <script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+
+
+
+
+  </script>
+
+</body>
+
+</html>

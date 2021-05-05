@@ -1,0 +1,1148 @@
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="pwa/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="pwa/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="pwa/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Products list</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+  <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+  <!-- cdn for testimonial theme  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- cdn for AOS library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <!-- custom style.css -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <style>
+    .row {
+      margin: 0 !important;
+    }
+
+    .row>* {
+      width: auto;
+    }
+
+    /* filter button */
+
+    .filterbtn {
+      margin-bottom: 50px;
+    }
+
+    .seldiv {
+      background: #ff3f1d;
+      height: 60px;
+      width: 40%;
+      border-radius: 17px;
+      padding: 20px;
+      font-size: 15px;
+
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .seldiv {
+        width: 70%;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .seldiv {
+        width: 100%;
+      }
+    }
+
+    .checked {
+      color: orange;
+    }
+
+    .text-gray {
+      color: #aaa;
+    }
+
+    .text-danger {
+      color: orange;
+    }
+
+    .prod-info-main {
+      border: 1px solid #baaec0;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      background: #fff;
+      padding: 6px;
+      -webkit-box-shadow: 0 1px 4px 0 rgba(21, 180, 255, 0.5);
+      box-shadow: 0 1px 1px 0 rgba(21, 180, 255, 0.5);
+    }
+
+    .prod-info-main .product-image {
+      background-color: #ebf8fe;
+      display: block;
+      min-height: 239px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #ceefff;
+      /* padding-top: 40px; */
+      max-height: 239px;
+    }
+
+    .rotprod {
+      -webkit-transition-duration: 0.8s;
+      -moz-transition-duration: 0.8s;
+      -o-transition-duration: 0.8s;
+      transition-duration: 0.8s;
+    }
+
+    /*  
+    .rotprod:hover  
+    {
+        -webkit-transform:rotate(360deg);
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+    }  */
+
+    .prod-info-main .product-deatil {
+      border-bottom: 1px solid #dfe5e9;
+      padding-top: 16px;
+      position: relative;
+      background: #fff;
+    }
+
+    .product-content .product-deatil h5 a {
+      color: #2f383d;
+      font-size: 15px;
+      line-height: 19px;
+      text-decoration: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .prod-info-main .product-deatil h5 a span {
+      color: #9aa7af;
+      display: block;
+      font-size: 13px;
+    }
+
+    .prod-info-main .product-deatil span.tag1 {
+      border-radius: 50%;
+      color: #fff;
+      font-size: 15px;
+      height: 50px;
+      padding: 13px 0;
+      position: absolute;
+      right: 10px;
+      text-align: center;
+      top: 10px;
+      width: 50px;
+    }
+
+    .prod-info-main .product-deatil span.sale {
+      background-color: #21c2f8;
+    }
+
+    .prod-info-main .product-deatil span.discount {
+      background-color: #71e134;
+    }
+
+    .prod-info-main .product-deatil span.hot {
+      background-color: #fa9442;
+    }
+
+    .prod-info-main .description {
+      font-size: 12.5px;
+      line-height: 20px;
+      padding: 10px 14px 16px 19px;
+      background: #fff;
+    }
+
+    .prod-info-main .product-info {
+      padding: 11px 19px 10px 20px;
+    }
+
+    .prod-info-main .product-info a.add-to-cart {
+      color: #2f383d;
+      font-size: 13px;
+      padding-left: 16px;
+    }
+
+    .prod-info-main name.a {
+      padding: 5px 10px;
+      margin-left: 16px;
+    }
+
+    .product-info.smart-form .btn {
+      padding: 6px 12px;
+      margin-left: 12px;
+      /* margin-top: -10px; */
+      border-radius: 10px;
+    }
+
+    .load-more-btn {
+      background-color: #21c2f8;
+      border-bottom: 2px solid #037ca5;
+      border-radius: 2px;
+      border-top: 2px solid #0cf;
+      margin-top: 20px;
+      padding: 9px 0;
+      width: 100%;
+    }
+
+    .product-block .product-deatil p.price-container span,
+    .prod-info-main .product-deatil p.price-container span,
+    .shipping table tbody tr td p.price-container span,
+    .shopping-items table tbody tr td p.price-container span {
+      color: #f83f21;
+      font-size: 24px;
+      line-height: 20px;
+    }
+
+    .product-info.smart-form .rating label {
+      margin-top: 15px;
+    }
+
+    .prod-wrap .product-image span.tag2 {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      padding: 10px 0;
+      color: #fff;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .prod-wrap .product-image span.tag3 {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 60px;
+      height: 36px;
+      border-radius: 50%;
+      padding: 10px 0;
+      color: #fff;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .prod-wrap .product-image span.sale {
+      background-color: #57889c;
+    }
+
+    .prod-wrap .product-image span.hot {
+      background-color: #a90329;
+    }
+
+    .prod-wrap .product-image span.special {
+      background-color: #3b6764;
+    }
+
+    .shop-btn {
+      position: relative;
+    }
+
+    .shop-btn>span {
+      background: #a90329;
+      display: inline-block;
+      font-size: 10px;
+      box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+      font-weight: 700;
+      border-radius: 50%;
+      padding: 2px 4px 3px !important;
+      text-align: center;
+      line-height: normal;
+      width: 19px;
+      top: -7px;
+      left: -7px;
+    }
+
+    .product-deatil hr {
+      padding: 0 0 5px !important;
+    }
+
+    .product-deatil .glyphicon {
+      color: #3276b1;
+    }
+
+    .product-deatil .product-image {
+      border-right: 0px solid #fff !important;
+    }
+
+    .product-deatil .name {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .product-deatil .name small {
+      display: block;
+    }
+
+    .product-deatil .name a {
+      margin-left: 0;
+    }
+
+    .product-deatil .price-container {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .product-deatil .price-container small {
+      font-size: 12px;
+    }
+
+    .product-deatil .fa-2x {
+      font-size: 16px !important;
+    }
+
+    .product-deatil .fa-2x>h5 {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .product-deatil .fa-2x+a,
+    .product-deatil .fa-2x+a+a {
+      font-size: 13px;
+    }
+
+    .product-deatil .certified {
+      margin-top: 10px;
+    }
+
+    .product-deatil .certified ul {
+      padding-left: 0;
+    }
+
+    .product-deatil .certified ul li:not(first-child) {
+      margin-left: -3px;
+    }
+
+    .product-deatil .certified ul li {
+      display: inline-block;
+      background-color: #f9f9f9;
+      padding: 13px 19px;
+    }
+
+    .product-deatil .certified ul li:first-child {
+      border-right: none;
+    }
+
+    .product-deatil .certified ul li a {
+      text-align: left;
+      font-size: 12px;
+      color: #6d7a83;
+      line-height: 16px;
+      text-decoration: none;
+    }
+
+    .product-deatil .certified ul li a span {
+      display: block;
+      color: #21c2f8;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .product-deatil .message-text {
+      width: calc(100% - 70px);
+    }
+
+    /*--Button effect classes for add to cart*/
+    .btn-cart {
+      border-radius: 0;
+      position: relative;
+      color: #fff;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      transition: all 0.4s ease 0s;
+    }
+
+    .btn-cart:after {
+      content: "\f07a";
+      font-family: fontawesome;
+      position: absolute;
+      right: 6px;
+      top: -4px;
+      opacity: 0;
+      color: #fff;
+      transition: all 0.4s ease 0s;
+    }
+
+    .btn-cart:hover:after {
+      top: 40%;
+      opacity: 5;
+    }
+
+    .btn-cart span {
+      display: block;
+      transition: all 0.7s linear 0s;
+    }
+
+    .btn-cart:hover span {
+      transform: translate(-9px);
+    }
+
+    /*--Button effect classes for More info*/
+    .btn-info {
+      border-radius: 0;
+      position: relative;
+      color: #fff;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      transition: all 0.4s ease 0s;
+    }
+
+    .btn-info:after {
+      content: "\f129";
+      font-family: fontawesome;
+      position: absolute;
+      right: 6px;
+      top: -4px;
+      opacity: 0;
+      color: #fff;
+      transition: all 0.4s ease 0s;
+    }
+
+    .btn-info:hover:after {
+      top: 40%;
+      opacity: 5;
+    }
+
+    .btn-info span {
+      display: block;
+      transition: all 0.7s linear 0s;
+    }
+
+    .btn-info:hover span {
+      transform: translate(-9px);
+    }
+
+    @media only screen and (min-width: 1024px) {
+      .prod-info-main div[class*="col-md-4"] {
+        padding-right: 0;
+      }
+
+      .prod-info-main div[class*="col-md-8"] {
+        padding: 0 13px 0 0;
+      }
+
+      .prod-wrap div[class*="col-md-5"] {
+        padding-right: 0;
+      }
+
+      .prod-wrap div[class*="col-md-7"] {
+        padding: 0 13px 0 0;
+      }
+
+      .prod-info-main .product-image {
+        border-right: 1px solid #dfe5e9;
+      }
+
+      .prod-info-main .product-info {
+        position: relative;
+      }
+    }
+
+    /* tabs dynamic colors */
+    .bcontent {
+      margin-top: 10px;
+    }
+
+    /*code to change background color*/
+
+    .nav-tabs>.active>a {
+      background-color: #4a5661;
+      color: whitesmoke;
+    }
+
+    .nav-link.m-2 {
+      color: #037;
+      border: 1px solid #2124eb;
+    }
+
+    .nav-link.active#pills-all-tab {
+      background-color: #ce05e0;
+      border: #ce05e0;
+    }
+
+    .nav-link.active#pills-games-tab {
+      background-color: #8a2be2;
+      border: #8a2be2;
+    }
+
+    .nav-link.active#pills-activityBox-tab {
+      background-color: #ffa500;
+      border: #ffa500;
+    }
+
+    .nav-link.active#pills-specialBooks-tab {
+      background-color: #b22222;
+      border: #b22222;
+    }
+
+    .nav-link.active#pills-knowledgeCapsules-tab {
+      background-color: #6b8e23;
+      border: #6b8e23;
+    }
+
+    .all.active {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    /* end tabs dynamic colors */
+
+    @media (min-width: 1200px) {
+
+      /* Works on Firefox */
+      .scrollBar {
+        scrollbar-width: thin;
+        scrollbar-color: blue orange;
+      }
+
+      /* Works on Chrome, Edge, and Safari */
+      .scrollBar::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      .scrollBar::-webkit-scrollbar-track {
+        background: none;
+      }
+
+      .scrollBar::-webkit-scrollbar-thumb {
+        background-color:#b881ec;
+        border-radius: 20px;
+        /* border: 3px solid orange; */
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+  <header id="header" style="top: -119px">
+    <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #b8edf9">
+      <a href="./index.html">
+        <img src="./images/varoh-games-logo.png" alt="Varoh Games Logo" height="85px" width="90px" />
+      </a>
+      <div class="cart-btn-1" id="cartic" onclick="cartic()">
+        <ul class="navbar-right">
+          <li>
+            <a href="#" id="cart1"><i class="fa fa-shopping-cart fa-2x"></i><span class="badge" id="badge1">3</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="cart-btn-2" id="cartic" onclick="cartic()">
+        <ul class="navbar-right">
+          <li>
+            <a href="#" id="cart2"><i class="fa fa-shopping-cart fa-2x"></i><span class="badge" id="badge2">3</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-btn collapsed" data-target="#navigation" data-toggle="collapse" aria-expanded="false">
+        <div class="menu-btn__burger navbar-toggler-icon collapsed" data-target="#navigation" data-toggle="collapse"
+          aria-expanded="false" aria-label="Toggle navigation"></div>
+      </div>
+
+      <div class="navbar-collapse collapse" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="./index.html" class="li l nav-link" style="background-color: #8a2be2">
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#about" class="li l nav-link" style="background-color: #ffa500">
+              <span>About Us</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./products.html" class="li l nav-link" style="background-color: #b22222">
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#testimonials" class="li l nav-link" style="background-color: #6b8e23">
+              <span>Testimonials</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./index.html#contact" class="li l nav-link" style="background-color: #008080">
+              <span>Contact Us</span>
+            </a>
+          </li>
+          <li class="nav-item" id="loginbtn1">
+            <a href="#" class="li l nav-link dropdown-toggle" style="background-color: #31b318"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <span> My Account</span>
+            </a>
+            <ul class="dropdown-menu mt-5 h-50 w-100 shadow-lg p-3 mb-5 bg-white rounded">
+              <li  id="myorders">
+                <a class="dropdown-item" onclick="myorders()" style="cursor: pointer">My Orders</a>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li id="auth_header_btn1" style="cursor: pointer"></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto l">
+          <li class="nav-item dropdown">
+            <!--  my account button -->
+            <div class="btn-group dropleft">
+              <button type="button" id="loginbtn2" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                My Account
+              </button>
+              <ul class="dropdown-menu">
+                <li  id="myorders">
+                  <a class="dropdown-item" onclick="myorders()" style="cursor: pointer">My Orders</a>
+                </li>
+
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li id="auth_header_btn2" style="cursor: pointer"></li>
+              </ul>
+            </div>
+            <!-- END my account button -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- End header -->
+
+
+  <!-- modal for login/register -->
+  <div id="auth_modal"></div>
+
+  <div class="container my-5">
+    <h2 style="text-align: center">Products</h2>
+    <hr style="height: 0px" />
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active m-2" id="pills-all-tab" data-bs-toggle="pill" href="#allproducts" role="tab"
+          aria-controls="pills-all" aria-selected="true">All</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link m-2" id="pills-games-tab" data-bs-toggle="pill" href="#games" role="tab"
+          aria-controls="pills-home" aria-selected="true">Games</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link m-2" id="pills-activityBox-tab" data-bs-toggle="pill" href="#activityBox" role="tab"
+          aria-controls="pills-profile" aria-selected="false">Knowledge Box</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link m-2" id="pills-specialBooks-tab" data-bs-toggle="pill" href="#specialBooks" role="tab"
+          aria-controls="pills-contact" aria-selected="false">Varoh's Books</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link m-2" id="pills-knowledgeCapsules-tab" data-bs-toggle="pill" href="#knowledgeCapsules"
+          role="tab" aria-controls="pills-contact" aria-selected="false">
+          Knowledge Capsules</a>
+      </li>
+    </ul>
+
+    <hr style="height: 0px" />
+    <div class="tab-content" id="pills-tabContent">
+      <!--================All Products tab============================== -->
+      <div class="tab-pane fade show active all scroll scrollBar" id="allproducts" role="tabpanel">
+        <h1 id="loader">Loading....</h1>
+      </div>
+      <!--================ END All Products tab============================== -->
+
+      <!--================games tab============================== -->
+      <div class="tab-pane fade show" id="games" role="tabpanel">
+        <p>
+          All the games designed by Varoh Games are to stimulate the brain
+          cells of our young players. So while they are having fun, they
+          sub-consciously learn. Play these games to ignite the young minds.
+          Explore below products and choose the one that fits your
+          requirement.
+        </p>
+        <div class="container scroll scrollBar">
+          <div class="container"></div>
+          <div id="games_row" class="row"><h1 id="loader1">Loading....</h1></div>
+        </div>
+      </div>
+
+      <!--=================END  games tab==================== -->
+
+      <!--=====================activity box tab========================== -->
+
+      <div class="tab-pane fade" id="activityBox" role="tabpanel">
+        <div class="filterBtn"></div>
+        <div class="seldiv d-flex justify-content-center align-items-center">
+          <label>Select Standard: </label>
+          <select class="col-lg-8 ml-3 col-md-6 col-sm-4 col-xs-2" onchange="getBoxes(event)"
+            id="select_standard"></select>
+        </div>
+        <p>
+          Varoh's Knowledge Box is an age appropriate skills development
+          programme. This box contains an array of topics from logical to
+          analytical to number games to brain teasers to visual teasers to
+          language fun to many more. These are available for kids from KG-VI
+          (age 4-12 years). Analytical questions are also explained through
+          videos for better understanding of approach to such topics. Let your
+          child unbox this exciting learning experience and be future ready!!
+        </p>
+
+        <div class="container scroll scrollBar">
+          <div id="activity_box_row" class="row"><h1 id="loader2">Loading....</h1></div>
+        </div>
+      </div>
+      <!-- END activity box tab -->
+
+      <!-- special books tab -->
+
+      <div class="tab-pane fade" id="specialBooks" role="tabpanel">
+        <p>
+          These are theme based books designed for catering to specific needs
+          of kids. Each book covers a particular topic in an extensive form to
+          hone the skills of kids through regular practice. These books
+          complement the various topics covered in our all inclusive Knowledge
+          Box.
+        </p>
+        <div class="container scroll scrollBar">
+          <div id="special_books_row" class="row"><h1 id="loader3">Loading....</h1></div>
+        </div>
+      </div>
+      <!--END special books tab -->
+
+      <!--knowledge capsules tab -->
+
+      <div class="tab-pane fade" id="knowledgeCapsules" role="tabpanel">
+        <div class="container my-4">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="./images/knowledgeCapsules.jpg" class="img-fluid shadow p-3 mb-5 bg-white rounded" alt="" />
+              </div>
+              <div class="col-lg-6">
+                <!-- <h3 class="mb-3">Knowledge Capsules</h3> -->
+                Varoh Games’ Knowledge Capsules are grade specific
+                designed for kids from Grade KG to Grade VI. Treading the
+                paths less travelled, we focus on non-academic skills for an
+                overall brain development of the child. We do not follow
+                classroom model, where kids need to abide by the rules while
+                clock is ticking fast. Instead, we believe in giving them a
+                free hand and their own space while solving these worksheets.
+                The kids get their own time and comfort, so that they can love
+                what they do, while doing what they love!! But we understand
+                kids need us to understand certain problems in a better and a
+                clearer way. So, we reach out to our kids through recorded
+                videos explaining the nuances and tricks on approaching
+                various topics. We follow our kids as shadows while never
+                overshadowing their minds and imaginations!!! These capsules
+                are delivered to you through school tie ups. So if you are
+                interested and you want your school to be part of our
+                Knowledge Capsules, kindly fill the following form:
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <h3 class="text-center mt-4">CONTACT US</h3>
+          <form onsubmit="knowledgeCapsules(event)" class="needs-validation" method="post">
+            <div class="form-group my-3">
+              <label for="username">Name</label>
+              <input type="text" class="form-control" id="kcname" data-v-max-length="50" required />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" required aria-describedby="emailHelp" required id="kcemail" />
+            </div>
+            <div class="mb-3">
+              <label for="inputCityName" class="form-label"> City Name</label>
+              <input type="text" class="form-control" data-v-max-length="50" required id="kccity" />
+            </div>
+
+            <div class="mb-3">
+              <label for="inpuSchoolName" class="form-label">
+                School Name</label>
+              <input type="text" class="form-control" data-v-max-length="70" required id="kcschool" />
+            </div>
+
+            <div class="mb-3">
+              <label for="inputStandard" class="form-label"> Standard</label>
+              <input id="kcstandard" type="text" class="form-control" id="standard" data-v-max-length="70" required />
+            </div>
+            <div class="d-grid">
+              <input type="submit" id="kCSubmit" class="btn-lg btn-primary" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- END knowledge capsules tab -->
+  </div>
+
+  <!-- footer-links -->
+  <div class="footer-links" style="background-color: #192e64; color: whitesmoke">
+    <div class="row my-0">
+      <div class="col-lg-3 col-md-6 footer-contact">
+        <h4 class="my-4">Varoh Games</h4>
+        <p>
+          <i class="fa fa-map-marker mx-2"></i>A-403, Twins CHS Limited,
+          <br />
+          Navi Mumbai 410210,
+          <br />Maharashtra
+        </p>
+        <p>
+          <i class="fa fa-phone mx-2"></i><a href="tel:+919748363769">+91 9748363769</a>
+        </p>
+        <p>
+          <i class="fa fa-envelope mx-2"></i>
+          <a href="mailto:contact@varohgames.com">contact@varohgames.com</a>
+        </p>
+      </div>
+      <div class="col-lg-3 col-md-6 usefulLinks">
+        <h4 class="my-4">Useful Links</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#about">About us</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./termsofservice.html" target="_blank" rel="noreferrer noopener">Terms of service</a></li>
+          <li><a href="./privacypolicy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="my-4">Products</h4>
+        <ul>
+          <li><a href="./products.html#games">Games</a></li>
+          <li><a href="./products.html#activityBox">Knowledge Box</a></li>
+          <li><a href="./products.html#specialBooks">Varoh's Books</a></li>
+          <li>
+            <a href="./products.html#knowledgeCapsules">Knowledge Capsules</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="my-4">Our Social Networks</h4>
+        <div class="py-2 text-center">
+          <a href="https://www.facebook.com/VarohGames/"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
+          <a href="https://www.youtube.com/channel/UCfy0-7GgVMRZ-ogiixeSgmg/featured "><i
+              class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
+          <a href="https://www.instagram.com/varohgames?r=nametag"><i
+              class="fab fa-instagram fa-2x text-danger mx-3"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer" style="font-size: 15px">
+    <p>
+      <a href="./index.html"><strong>Varoh Games</strong></a>
+      &copy; <span id="year"></span> | All Rights Reserved
+    </p>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Back To  Top Button -->
+  <div class="container">
+    <a href="#" onclick="topFunction()" id="topBtn" class="back-to-top" title="Go to top"><svg width="2em" height="2em"
+        viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+      </svg></a>
+  </div>
+  <!-- preloader -->
+  <!-- <div id="preloader"></div> -->
+  <script src="./scripts/products.js"></script>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+
+  <!-- form validation -->
+
+  <script src="dist/jbvalidator.min.js"></script>
+  <script>
+    $(function () {
+      let validator = $("form.needs-validation").jbvalidator({
+        errorMessage: true,
+        successClass: true,
+        language: "dist/lang/en.json",
+      });
+
+      //custom validate methode
+      validator.validator.custom = function (el, event) {
+        if ($(el).is("[name=password]") && $(el).val().length < 5) {
+          return "Your password is too weak.";
+        }
+      };
+    });
+  </script>
+  <!-- End form validation -->
+
+  <!-- preloader script -->
+  <script>
+    // Preloader
+    $(window).on("load", function () {
+      if ($("#preloader").length) {
+        $("#preloader")
+          .delay(100)
+          .fadeOut("slow", function () {
+            $(this).remove();
+          });
+      }
+    });
+  </script>
+  <script src="./scripts/auth_header.js"></script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!--script for footer dynamically changing year -->
+
+  <script>
+    var year = new Date().getFullYear();
+    document.getElementById("year").innerHTML = year;
+  </script>
+  <!-- cdn for AOS library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const menuBtn = document.querySelector(".menu-btn");
+    let menuOpen = false;
+    menuBtn.addEventListener("click", () => {
+      if (!menuOpen) {
+        menuBtn.classList.add("open");
+        menuOpen = true;
+      } else {
+        menuBtn.classList.remove("open");
+        menuOpen = false;
+      }
+    });
+
+    AOS.init({
+      once: true,
+      duration: 1200,
+    });
+  </script>
+
+  <!-- preloader script -->
+  <script>
+    // Preloader
+    $(window).on("load", function () {
+      if ($("#preloader").length) {
+        $("#preloader")
+          .delay(100)
+          .fadeOut("slow", function () {
+            $(this).remove();
+          });
+      }
+    });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+  <!--End preloader script -->
+
+  <!-- script for products card sliders  -->
+  <script>
+    $(document).ready(function () {
+      $("#cards-slider").owlCarousel({
+        items: 3,
+        itemsDesktop: [1060, 2],
+        itemsDesktopSmall: [979, 2],
+        itemsTablet: [768, 2],
+        itemsMobile: [650, 1],
+        pagination: false,
+        navigation: true,
+        navigationText: ["", ""],
+        autoPlay: true,
+      });
+    });
+  </script>
+  <!-- END script for products card sliders  -->
+
+  <!-- cdn and script for testimonials  -->
+  <script>
+    $(document).ready(function () {
+      $("#testimonial-slider").owlCarousel({
+        items: 3,
+        itemsDesktop: [1000, 2],
+        itemsDesktopSmall: [979, 2],
+        itemsTablet: [768, 2],
+        itemsMobile: [650, 1],
+        pagination: false,
+        navigation: true,
+        navigationText: ["", ""],
+        autoPlay: true,
+      });
+    });
+  </script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <!--END  cdn and script for testimonials  -->
+
+  <script>
+    var mybutton = document.getElementById("topBtn");
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      } else {
+        document.getElementById("header").style.top = "-119px";
+        mybutton.style.display = "none";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+  </script>
+
+  <!-- form validation -->
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      "use strict";
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll(".needs-validation");
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+  <!-- End form validation -->
+
+  <!-- script for toggables tabs color change -->
+  <script>
+    $(document).ready(function () {
+      $("ul.nav-tabs > li").click(function (e) {
+        $("ul.nav-tabs > li").removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+  </script>
+  <!--End script for toggables tabs color change -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator/dist/jbvalidator.min.js"></script> -->
+
+  <script src="dist/jbvalidator.min.js"></script>
+  <script>
+    $(function () {
+      let validator = $("form.needs-validation").jbvalidator({
+        errorMessage: true,
+        successClass: true,
+        language: "dist/lang/en.json",
+      });
+
+      //custom validate methode
+      validator.validator.custom = function (el, event) {
+        if ($(el).is("[name=password]") && $(el).val().length < 5) {
+          return "Your password is too weak.";
+        }
+      };
+    });
+  </script>
+
+  <script>
+    const cartic = () => {
+      if (localStorage.getItem("cart") != null) {
+        if (localStorage.getItem("cart").length != 0) {
+          window.location.href = "./checkout.html";
+        } else {
+          alert("Cart is empty");
+        }
+      } else {
+        alert("Cart is empty");
+      }
+    };
+  </script>
+
+  <!-- script tabs links -->
+  <script>
+    $(function () {
+      var hash = window.location.hash;
+      hash && $('ul.nav a[href="' + hash + '"]').tab("show");
+
+      $(".nav-tabs a").click(function (e) {
+        $(this).tab("show");
+        var scrollmem = $("body").scrollTop();
+        window.location.hash = this.hash;
+        $("html,body").scrollTop(scrollmem);
+      });
+    });
+  </script>
+</body>
+
+</html>

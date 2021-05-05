@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="pwa/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pwa/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="pwa/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- cdn for testimonial theme  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+ 
+<!-- cdn for AOS library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link async
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- custom style.css -->
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- custom style.css -->
+    <link rel="stylesheet" href="./style.css" />
+    
+    <style>
+      .row>*{
+        width: auto;
+      }
+      
+      .row{ margin:0 !important;}
+      
+/* detail page carousel */
+@media  (min-width:435px) and (max-width:1030px){
+.detailCarousel{
+  max-width: 500px;
+             }
+}
+
+
+@media  (min-width:280px) and (max-width:441px){
+  .detailCarousel{
+  max-width: 300px;
+             }
+
+}
+
+
+
+@media  (min-width:349px) and (max-width:441px){
+  .usefulLinks{
+    margin: 47px;
+  }
+
+}
+
+</style>
+      
+  </head>
+  <body>
+     <!-- header -->
+     <header id="header">
+      <nav
+        class="navbar navbar-light navbar-expand-lg"
+        style="background-color:#b8edf9"
+      >
+      
+        <a href="./index.html" >
+          <img
+            src="./images/varoh-games-logo.png"
+            alt="Varoh Games Logo"
+            height="85px"
+            width="90px"
+           
+          />
+        </a>
+        <div class="cart-btn-1" id="cartic" onclick="cartic()">
+          <ul class="navbar-right">
+            <li><a href="#" id="cart1"><i class="fa fa-shopping-cart fa-2x"></i><span class="badge" id="badge1">3</span></a></li>
+          </ul>
+      </div>
+        <div class="cart-btn-2" id="cartic" onclick="cartic()" >
+          <ul class="navbar-right">
+            <li><a href="#" id="cart2" ><i class="fa fa-shopping-cart fa-2x "></i><span class="badge" id="badge2">3</span></a></li>
+          </ul>
+      </div>
+       
+        </div>
+        <div class="menu-btn" data-target="#navigation"
+        data-toggle="collapse">
+          <div class="menu-btn__burger navbar-toggler-icon"   data-target="#navigation"
+          data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        
+          </div>
+        </div>
+       
+      </div>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav ml-auto" >
+            <li class="nav-item">
+              <a
+                href="./index.html"
+                class="li l nav-link"
+                style="background-color: #8a2be2"
+              >
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="./index.html#about"
+                class="li l nav-link"
+                style="background-color: #ffa500"
+              >
+                <span>About Us</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="./products.html"
+                class="li l nav-link"
+                style="background-color: #b22222"
+              >
+                <span>Products</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="./index.html#testimonials"
+                class="li l nav-link"
+                style="background-color: #6b8e23"
+              >
+                <span>Testimonials</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="./index.html#contact"
+                class="li l nav-link"
+                style="background-color: #008080"
+              >
+                <span>Contact Us</span>
+              </a>
+            </li>
+             <li class="nav-item " id="loginbtn1">
+              <a
+                href="#"
+                class="li l nav-link dropdown-toggle"
+                style="background-color: #31b318"
+                data-bs-toggle="dropdown" aria-expanded="false"
+              >
+                <span>My Account</span>
+                
+              </a>
+              <ul class="dropdown-menu mt-5 h-50 w-100 shadow-lg p-3 mb-5 bg-white rounded ">
+                <li  id="myorders"><a class="dropdown-item " onclick="myorders()"  style="cursor:pointer">My Orders</a></li>    
+               
+                <li><hr class="dropdown-divider"></li>
+                <li id="auth_header_btn1" style="cursor:pointer" ></li>
+                 </ul>
+              
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto l">
+            <li  class="nav-item dropdown">
+              <!--  my account button -->
+            <div class="btn-group  dropleft">
+                  <button type="button" id="loginbtn2" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    My Account
+                   </button>
+              <ul class="dropdown-menu">
+                    <li  id="myorders"><a class="dropdown-item" onclick="myorders()"  style="cursor:pointer">My Orders</a></li>    
+                   
+                    <li><hr class="dropdown-divider"></li>
+                    <li id="auth_header_btn2" style="cursor:pointer"></li>
+                     </ul>
+                </div>
+            <!-- END my account button -->
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- End header -->
+    <!-- modal for login/register -->
+    <div id="auth_modal">
+      
+    </div>
+
+    
+    <section
+      id="detail"
+      class="text-gray-700 body-font overflow-hidden"
+    ></section>
+      <!-- footer-links -->
+      <div class="footer-links" style="background-color:#192e64;color:whitesmoke">
+        <div class="row my-0">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4 class="my-4">Varoh Games</h4>
+            <p><i class="fa fa-map-marker mx-2 "></i>A-403, Twins CHS Limited, 
+              <br>
+              Navi Mumbai 410210,
+              <br>Maharashtra</p>
+             <p><i class="fa fa-phone  mx-2 "></i><a href="tel:+919748363769">+91 9748363769</a>
+             </p>
+             <p><i class="fa fa-envelope  mx-2"></i> <a href="mailto:contact@varohgames.com">contact@varohgames.com</a></p>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 usefulLinks">
+            <h4 class="my-4">Useful Links</h4>
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./index.html#about">About us</a></li>
+              <li><a href="./products.html">Products</a></li>
+              <li><a href="./termsofservice.html" target="_blank" rel="noreferrer noopener">Terms of service</a></li>
+              <li><a href="./privacypolicy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a></li>
+            </ul>
+          </div>
+          
+        <div class="col-lg-3 col-md-6">
+          <h4 class="my-4">Products</h4>
+          <ul>
+            <li><a href="./products.html#games">Games</a></li>
+            <li><a href="./products.html#activityBox">Knowledge Box</a></li>
+            <li><a href="./products.html#specialBooks">Varoh's Books</a></li>
+            <li>
+              <a href="./products.html#knowledgeCapsules">Knowledge Capsules</a>
+            </li>
+          </ul>
+        </div>
+  
+         
+        <div class="col-lg-3 col-md-6"> 
+          <h4  class="my-4">Our Social Networks</h4>
+          <div class="py-2 ">
+           <a href="https://www.facebook.com/VarohGames/"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
+           <a href="https://www.youtube.com/channel/UCfy0-7GgVMRZ-ogiixeSgmg/featured "><i class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
+           <a href="https://www.instagram.com/varohgames?r=nametag"><i class="fab fa-instagram fa-2x text-danger mx-3"></i></a>
+         </div>
+  
+          </div>
+         </div>
+       </div>
+      
+     <!-- footer -->
+     <footer class="footer" style="font-size: 15px;">
+      <p><a href="./index.html"><strong>Varoh Games</strong></a> &copy; <span id="year"></span> | All Rights Reserved</p> 
+   </footer>
+    <!-- End footer -->
+  
+     <!-- Back To  Top Button -->
+     <div class="container">
+       <a href="#" onclick="topFunction()" id="topBtn" class="back-to-top" title="Go to top"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+      </svg></a>
+     </div>
+     <!-- preloader -->
+     <div id="preloader"></div>
+     
+    <script src="./scripts/detail.js"></script>
+    <script src="./scripts/auth_header.js"></script>
+   
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!--script for footer dynamically changing year -->
+
+    <script>var year= new Date().getFullYear();
+    document.getElementById("year").innerHTML=year;</script>
+<!-- cdn for AOS library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const menuBtn = document.querySelector('.menu-btn');
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+  if(!menuOpen) {
+    menuBtn.classList.add('open');
+    menuOpen = true;
+  } else {
+    menuBtn.classList.remove('open');
+    menuOpen = false;
+  }
+});
+
+  AOS.init({
+    once: true,
+    duration: 1200
+  });
+</script>
+
+<!-- preloader script -->
+<script>
+  // Preloader
+  $(window).on('load', function() {
+    if ($('#preloader').length) {
+      $('#preloader').delay(100).fadeOut('slow', function() {
+        $(this).remove();
+      });
+    }
+  });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+  <!--End preloader script -->
+  
+   <!-- script for products card sliders  -->
+   <script>$(document).ready(function(){
+    $("#cards-slider").owlCarousel({
+        items:3,
+        itemsDesktop:[1060,2],
+        itemsDesktopSmall:[979,2],
+        itemsTablet:[768,2],
+        itemsMobile:[650,1],
+        pagination:false,
+        navigation:true,
+        navigationText:["",""],
+        autoPlay:true
+    });
+});</script>
+   <!-- END script for products card sliders  -->
+
+
+   <!-- cdn and script for testimonials  -->
+  <script>$(document).ready(function(){
+    $("#testimonial-slider").owlCarousel({
+        items:3,
+        itemsDesktop:[1000,2],
+        itemsDesktopSmall:[979,2],
+        itemsTablet:[768,2],
+        itemsMobile:[650,1],
+        pagination:false,
+        navigation:true,
+        navigationText:["",""],
+        autoPlay:true
+    });
+});</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+ <!--END  cdn and script for testimonials  -->
+
+<script>
+   var mybutton = document.getElementById("topBtn");
+        var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("header").style.top = "0";
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+    } else {
+      document.getElementById("header").style.top = "-119px";
+      mybutton.style.display = "none";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
+ 
+ <!-- form validation -->
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+<!-- End form validation -->
+
+<!-- script for toggables tabs color change -->
+<script> 
+  $(document).ready(function () { 
+
+      $('ul.nav-tabs > li') 
+              .click(function (e) { 
+          $('ul.nav-tabs > li') 
+              .removeClass('active'); 
+          $(this).addClass('active'); 
+      }); 
+  }); 
+</script> 
+<!--End script for toggables tabs color change -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator/dist/jbvalidator.min.js"></script> -->
+        
+<script src="dist/jbvalidator.min.js"></script>
+<script>
+    $(function (){
+
+        let validator = $('form.needs-validation').jbvalidator({
+            errorMessage: true,
+            successClass: true,
+            language: "dist/lang/en.json"
+        });
+
+        //custom validate methode
+        validator.validator.custom = function(el, event){
+            if($(el).is('[name=password]') && $(el).val().length < 5){
+                return 'Your password is too weak.';
+            }
+        }
+    });
+</script>
+
+<script>
+  const cartic = () =>{
+
+if(localStorage.getItem("cart")!=null){
+  if(localStorage.getItem("cart").length!=0){
+    window.location.href = "./checkout.html";
+  }
+  else{
+    alert("Cart is empty");
+  }
+}
+else{
+  alert("Cart is empty");
+}
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script>
+  function myFunction() {
+    document.getElementById("myBtn").disabled = true;
+  }
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  </body>
+</html>
